@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use_from_same_package
+
 import 'package:client_booking/view/flutter_flow/flutter_flow_radio_button.dart';
 import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:client_booking/view_models/controller/booking/booking_form1_controller.dart';
@@ -8,7 +10,7 @@ import 'package:get/get.dart';
 class ClientInfo extends StatefulWidget {
   final VoidCallback onNextTab;
 
-   const ClientInfo({Key? key, required this.onNextTab}) : super(key: key);
+  const ClientInfo({Key? key, required this.onNextTab}) : super(key: key);
 
   @override
   State<ClientInfo> createState() => _ClientInfoState();
@@ -128,14 +130,16 @@ class _ClientInfoState extends State<ClientInfo> {
                                           const EdgeInsetsDirectional.fromSTEB(
                                               20.0, 0.0, 0.0, 0.0),
                                     ),
-                                    style:FlutterFlowTheme.of(context).bodyText1,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                     maxLines: null,
                                   ),
                                 ),
                               ),
                               Expanded(
                                 child: TextFormField(
-                                  controller: clientInfoController.fathersName.value,
+                                  controller:
+                                      clientInfoController.fathersName.value,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: ' Father Name',
@@ -352,7 +356,8 @@ class _ClientInfoState extends State<ClientInfo> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       15.0, 0.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    controller:clientInfoController.mobile.value,
+                                    controller:
+                                        clientInfoController.mobile.value,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: ' Enter Mobile Number',
@@ -401,7 +406,8 @@ class _ClientInfoState extends State<ClientInfo> {
                                           const EdgeInsetsDirectional.fromSTEB(
                                               20.0, 0.0, 0.0, 0.0),
                                     ),
-                                    style: FlutterFlowTheme.of(context).bodyText1,
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyText1,
                                     maxLines: null,
                                     keyboardType: TextInputType.phone,
                                   ),
@@ -934,7 +940,8 @@ class _ClientInfoState extends State<ClientInfo> {
                               ),
                               Expanded(
                                 child: TextFormField(
-                                  controller: clientInfoController.permanentPin.value,
+                                  controller:
+                                      clientInfoController.permanentPin.value,
                                   obscureText: false,
                                   //maxLength: 6,
                                   decoration: InputDecoration(
@@ -1895,14 +1902,12 @@ class _ClientInfoState extends State<ClientInfo> {
                                     // //debugPrint(clientInfoController.tabs.value.toString());
                                     clientInfoController.submit();
                                     widget.onNextTab();
-
-
                                   },
                                   child: Container(
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.40,
-                                    height:
-                                        MediaQuery.of(context).size.height * 0.04,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.40,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.04,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .buttonColor,
@@ -1918,14 +1923,17 @@ class _ClientInfoState extends State<ClientInfo> {
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
                                           Text(
-                                            clientInfoController.lastId.value.isEmpty?'Save':"Update",
+                                            clientInfoController
+                                                    .lastId.value.isEmpty
+                                                ? 'Save'
+                                                : "Update",
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
                                                   fontFamily: 'Poppins',
-                                                  color:
-                                                      FlutterFlowTheme.of(context)
-                                                          .btnText,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .btnText,
                                                 ),
                                           ),
                                           SizedBox(
@@ -1934,8 +1942,9 @@ class _ClientInfoState extends State<ClientInfo> {
                                               thickness: 1.0,
                                               indent: 10.0,
                                               endIndent: 10.0,
-                                              color: FlutterFlowTheme.of(context)
-                                                  .btnText,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .btnText,
                                             ),
                                           ),
                                           Icon(
@@ -1964,5 +1973,4 @@ class _ClientInfoState extends State<ClientInfo> {
       ),
     );
   }
-
 }

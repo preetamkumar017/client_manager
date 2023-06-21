@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use_from_same_package
+
 import 'package:client_booking/view/flutter_flow/flutter_flow_choice_chips.dart';
 import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
@@ -59,11 +61,9 @@ class _TransactionEditState extends State<TransactionEdit> {
       tc.fundingModeList.value = [data!.fundingMode!];
       tc.fundingMode.value = data!.fundingMode!;
 
-
-
       tc.quotationTypeList.value = [data!.quotationType!];
       tc.fundingMode.value = data!.fundingMode!;
-      tc.quotationRate.value  = data!.quotationType!;
+      tc.quotationRate.value = data!.quotationType!;
     }
   }
 
@@ -73,37 +73,30 @@ class _TransactionEditState extends State<TransactionEdit> {
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
-            color: FlutterFlowTheme
-                .of(context)
-                .primaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
           ),
           child: ListView(
             children: [
-
               Container(
                 margin: const EdgeInsets.only(left: 10, bottom: 20, top: 10),
                 child: Stack(
                   children: [
-
-                    IconButton(onPressed: () {
-                      Get.back();
-                    }, icon:  Icon(Icons.arrow_back_rounded,
-                        color: FlutterFlowTheme.of(context).iconColor)),
+                    IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: Icon(Icons.arrow_back_rounded,
+                            color: FlutterFlowTheme.of(context).iconColor)),
                     Padding(
-                      padding:
-                      const EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment:
-                        MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Edit Transaction Details',
-                            style:
-                            FlutterFlowTheme
-                                .of(context)
-                                .title3,
+                            style: FlutterFlowTheme.of(context).title3,
                           ),
                         ],
                       ),
@@ -112,19 +105,15 @@ class _TransactionEditState extends State<TransactionEdit> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(
-                    10.0, 10.0, 10.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: FlutterFlowTheme
-                        .of(context)
-                        .alternate,
+                    color: FlutterFlowTheme.of(context).alternate,
                     borderRadius: BorderRadius.circular(10.0),
                     shape: BoxShape.rectangle,
                     border: Border.all(
-                      color: FlutterFlowTheme
-                          .of(context)
-                          .alternate,
+                      color: FlutterFlowTheme.of(context).alternate,
                     ),
                   ),
                   child: SingleChildScrollView(
@@ -132,9 +121,8 @@ class _TransactionEditState extends State<TransactionEdit> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0,
-                              0.0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 5.0, 0.0, 0.0),
                           child: Form(
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Column(
@@ -150,39 +138,38 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: tc.anyOffer.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Any Offer',
-                                              labelStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .bodyText1,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                               hintText: 'Enter Amount',
-                                              hintStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .subtitle2,
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -190,28 +177,27 @@ class _TransactionEditState extends State<TransactionEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme
-                                                  .of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme
-                                                .of(context)
+                                            style: FlutterFlowTheme.of(context)
                                                 .bodyText1,
                                             maxLines: null,
                                           ),
@@ -228,8 +214,7 @@ class _TransactionEditState extends State<TransactionEdit> {
                                     children: [
                                       Text(
                                         'Quotation rate of selection',
-                                        style: FlutterFlowTheme
-                                            .of(context)
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyText1,
                                       ),
                                     ],
@@ -245,7 +230,8 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       Expanded(
                                         child: FlutterFlowChoiceChips(
                                           initialized: true,
-                                          initiallySelected: tc.quotationTypeList,
+                                          initiallySelected:
+                                              tc.quotationTypeList,
                                           options: const [
                                             ChipData(
                                                 'Standard', Icons.star_rounded),
@@ -260,61 +246,62 @@ class _TransactionEditState extends State<TransactionEdit> {
                                             switch (val!.first.toString()) {
                                               case "Standard":
                                                 {
-                                                  tc.quotationRate.value = "Standard";
+                                                  tc.quotationRate.value =
+                                                      "Standard";
                                                   break;
                                                 }
                                               case "Premium":
                                                 {
                                                   tc.quotationRate.value =
-                                                  "Premium";
+                                                      "Premium";
                                                   break;
                                                 }
                                               case "Luxury":
                                                 {
-                                                  tc.quotationRate.value = "Luxury";
+                                                  tc.quotationRate.value =
+                                                      "Luxury";
                                                   break;
                                                 }
                                               case "Ultra Luxury":
                                                 {
-                                                  tc.quotationRate.value = "Ultra Luxury";
+                                                  tc.quotationRate.value =
+                                                      "Ultra Luxury";
                                                   break;
                                                 }
                                             }
                                           },
                                           selectedChipStyle: ChipStyle(
                                             backgroundColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .borderColor,
-                                            textStyle: FlutterFlowTheme
-                                                .of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
+                                                FlutterFlowTheme.of(context)
+                                                    .borderColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                    ),
                                             iconColor: Colors.white,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
                                           unselectedChipStyle: ChipStyle(
                                             backgroundColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .white,
-                                            textStyle: FlutterFlowTheme
-                                                .of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .of(context)
-                                                  .secondaryText,
-                                            ),
+                                                FlutterFlowTheme.of(context)
+                                                    .white,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                    ),
                                             iconColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .iconColor,
+                                                FlutterFlowTheme.of(context)
+                                                    .iconColor,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
@@ -336,39 +323,40 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: tc.discountRate.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Final Discounted Rate:',
-                                              labelStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .bodyText1,
-                                              hintText: 'Final Discounted Rate:',
-                                              hintStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .subtitle2,
+                                              labelText:
+                                                  'Final Discounted Rate:',
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
+                                              hintText:
+                                                  'Final Discounted Rate:',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -376,28 +364,27 @@ class _TransactionEditState extends State<TransactionEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme
-                                                  .of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme
-                                                .of(context)
+                                            style: FlutterFlowTheme.of(context)
                                                 .bodyText1,
                                             maxLines: null,
                                           ),
@@ -410,62 +397,59 @@ class _TransactionEditState extends State<TransactionEdit> {
                                           decoration: InputDecoration(
                                             labelText: ' Enter Amount',
                                             labelStyle:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .bodyText1,
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1,
                                             hintText: 'Amount',
                                             hintStyle:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .subtitle2,
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2,
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: FlutterFlowTheme
-                                                    .of(context)
-                                                    .borderColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .borderColor,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius
-                                                  .circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: FlutterFlowTheme
-                                                    .of(context)
-                                                    .borderColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .borderColor,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius
-                                                  .circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius
-                                                  .circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            focusedErrorBorder: OutlineInputBorder(
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius
-                                                  .circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .alternate,
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             contentPadding:
-                                            const EdgeInsetsDirectional
-                                                .fromSTEB(
-                                                20.0, 0.0, 0.0, 0.0),
+                                                const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                    20.0, 0.0, 0.0, 0.0),
                                           ),
-                                          style: FlutterFlowTheme
-                                              .of(context)
+                                          style: FlutterFlowTheme.of(context)
                                               .bodyText1,
                                           maxLines: null,
                                         ),
@@ -483,39 +467,38 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: tc.inWords.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'In Words',
-                                              labelStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .bodyText1,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                               hintText: 'In Words',
-                                              hintStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .subtitle2,
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -523,28 +506,27 @@ class _TransactionEditState extends State<TransactionEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme
-                                                  .of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme
-                                                .of(context)
+                                            style: FlutterFlowTheme.of(context)
                                                 .bodyText1,
                                             maxLines: null,
                                           ),
@@ -563,44 +545,44 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       Expanded(
                                         child: Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: tc.nonRefundable.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Non- Refundable',
-                                              labelStyle: FlutterFlowTheme
-                                                  .of(context)
+                                              labelStyle: FlutterFlowTheme.of(
+                                                      context)
                                                   .bodyText1
                                                   .override(
-                                                fontFamily: 'Poppins',
-                                                color: const Color(0xFFFF0000),
-                                              ),
+                                                    fontFamily: 'Poppins',
+                                                    color:
+                                                        const Color(0xFFFF0000),
+                                                  ),
                                               hintText:
-                                              'Booking Amount Paid Not-Refundable',
-                                              hintStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .subtitle2,
+                                                  'Booking Amount Paid Not-Refundable',
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme
-                                                      .of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -608,28 +590,27 @@ class _TransactionEditState extends State<TransactionEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme
-                                                  .of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme
-                                                .of(context)
+                                            style: FlutterFlowTheme.of(context)
                                                 .bodyText1,
                                             maxLines: null,
                                           ),
@@ -646,8 +627,7 @@ class _TransactionEditState extends State<TransactionEdit> {
                                     children: [
                                       Text(
                                         'Payment Link',
-                                        style: FlutterFlowTheme
-                                            .of(context)
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyText1,
                                       ),
                                     ],
@@ -750,40 +730,35 @@ class _TransactionEditState extends State<TransactionEdit> {
                                 //   ),
                                 // ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional
-                                      .fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 0.0),
                                   child: TextFormField(
                                     controller: tc.paymentLink.value,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Payment Link',
-                                      labelStyle: FlutterFlowTheme
-                                          .of(context)
+                                      labelStyle: FlutterFlowTheme.of(context)
                                           .bodyText1,
                                       hintText: 'Enter Payment Link',
-                                      hintStyle: FlutterFlowTheme
-                                          .of(context)
+                                      hintStyle: FlutterFlowTheme.of(context)
                                           .subtitle2,
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme
-                                              .of(context)
+                                          color: FlutterFlowTheme.of(context)
                                               .borderColor,
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                        BorderRadius.circular(8.0),
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme
-                                              .of(context)
+                                          color: FlutterFlowTheme.of(context)
                                               .borderColor,
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                        BorderRadius.circular(8.0),
+                                            BorderRadius.circular(8.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
@@ -791,7 +766,7 @@ class _TransactionEditState extends State<TransactionEdit> {
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                        BorderRadius.circular(8.0),
+                                            BorderRadius.circular(8.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
@@ -799,20 +774,17 @@ class _TransactionEditState extends State<TransactionEdit> {
                                           width: 1.0,
                                         ),
                                         borderRadius:
-                                        BorderRadius.circular(8.0),
+                                            BorderRadius.circular(8.0),
                                       ),
                                       filled: true,
-                                      fillColor: FlutterFlowTheme
-                                          .of(context)
+                                      fillColor: FlutterFlowTheme.of(context)
                                           .alternate,
                                       contentPadding:
-                                      const EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 0.0, 0.0, 0.0),
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              20.0, 0.0, 0.0, 0.0),
                                     ),
                                     style:
-                                    FlutterFlowTheme
-                                        .of(context)
-                                        .bodyText1,
+                                        FlutterFlowTheme.of(context).bodyText1,
                                     maxLines: null,
                                   ),
                                 ),
@@ -1146,8 +1118,7 @@ class _TransactionEditState extends State<TransactionEdit> {
                                     children: [
                                       Text(
                                         'Funding mode of project',
-                                        style: FlutterFlowTheme
-                                            .of(context)
+                                        style: FlutterFlowTheme.of(context)
                                             .bodyText1,
                                       ),
                                     ],
@@ -1190,38 +1161,36 @@ class _TransactionEditState extends State<TransactionEdit> {
                                           },
                                           selectedChipStyle: ChipStyle(
                                             backgroundColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .borderColor,
-                                            textStyle: FlutterFlowTheme
-                                                .of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
+                                                FlutterFlowTheme.of(context)
+                                                    .borderColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                    ),
                                             iconColor: Colors.white,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
                                           unselectedChipStyle: ChipStyle(
                                             backgroundColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .white,
-                                            textStyle: FlutterFlowTheme
-                                                .of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .of(context)
-                                                  .secondaryText,
-                                            ),
+                                                FlutterFlowTheme.of(context)
+                                                    .white,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                    ),
                                             iconColor:
-                                            FlutterFlowTheme
-                                                .of(context)
-                                                .iconColor,
+                                                FlutterFlowTheme.of(context)
+                                                    .iconColor,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
@@ -1238,86 +1207,95 @@ class _TransactionEditState extends State<TransactionEdit> {
                                     visible: tc.fundingMode.value == "Self" ||
                                         tc.fundingMode.value == "Both",
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional
-                                          .fromSTEB(
-                                          10.0, 10.0, 10.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              10.0, 10.0, 10.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment
-                                            .center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Expanded(
                                             child: Padding(
                                               padding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  0.0, 0.0, 5.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      0.0, 0.0, 5.0, 0.0),
                                               child: TextFormField(
                                                 controller: tc.selfAmount.value,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: 'Self Amount',
                                                   labelStyle:
-                                                  FlutterFlowTheme
-                                                      .of(context)
-                                                      .bodyText1,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyText1,
                                                   hintText: 'Enter Amount',
                                                   hintStyle:
-                                                  FlutterFlowTheme
-                                                      .of(context)
-                                                      .subtitle2,
-                                                  enabledBorder: OutlineInputBorder(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .subtitle2,
+                                                  enabledBorder:
+                                                      OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .borderColor,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .borderColor,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
-                                                  focusedBorder: OutlineInputBorder(
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .borderColor,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .borderColor,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
-                                                  errorBorder: OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                  errorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
                                                   focusedErrorBorder:
-                                                  OutlineInputBorder(
-                                                    borderSide: const BorderSide(
+                                                      OutlineInputBorder(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Color(0x00000000),
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
                                                   filled: true,
                                                   fillColor:
-                                                  FlutterFlowTheme
-                                                      .of(context)
-                                                      .alternate,
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .alternate,
                                                   contentPadding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      20.0, 0.0, 0.0, 0.0),
+                                                      const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                          20.0, 0.0, 0.0, 0.0),
                                                 ),
-                                                style: FlutterFlowTheme
-                                                    .of(context)
-                                                    .bodyText1,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1,
                                                 maxLines: null,
                                               ),
                                             ),
@@ -1335,90 +1313,97 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       children: [
                                         Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(
-                                              10.0, 10.0, 10.0, 0.0),
+                                              .fromSTEB(10.0, 10.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment: MainAxisAlignment
-                                                .center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 0.0, 5.0, 0.0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                          0.0, 0.0, 5.0, 0.0),
                                                   child: TextFormField(
-                                                    controller: tc.bankName
-                                                        .value,
+                                                    controller:
+                                                        tc.bankName.value,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText: 'Bank Name',
                                                       labelStyle:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .bodyText1,
-                                                      hintText: 'Enter Bank Name',
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                      hintText:
+                                                          'Enter Bank Name',
                                                       hintStyle:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .subtitle2,
-                                                      enabledBorder: OutlineInputBorder(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2,
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                              .of(
-                                                              context)
+                                                                  .of(context)
                                                               .borderColor,
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      focusedBorder: OutlineInputBorder(
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                              .of(
-                                                              context)
+                                                                  .of(context)
                                                               .borderColor,
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      errorBorder: OutlineInputBorder(
-                                                        borderSide: const BorderSide(
-                                                          color: Color(
-                                                              0x00000000),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                        borderSide: const BorderSide(
-                                                          color: Color(
-                                                              0x00000000),
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .alternate,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
                                                       contentPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          20.0, 0.0, 0.0, 0.0),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              20.0,
+                                                              0.0,
+                                                              0.0,
+                                                              0.0),
                                                     ),
-                                                    style: FlutterFlowTheme
-                                                        .of(context)
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText1,
                                                     maxLines: null,
                                                   ),
@@ -1426,81 +1411,89 @@ class _TransactionEditState extends State<TransactionEdit> {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 0.0, 5.0, 0.0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                          0.0, 0.0, 5.0, 0.0),
                                                   child: TextFormField(
-                                                    controller: tc.loanAmount
-                                                        .value,
+                                                    controller:
+                                                        tc.loanAmount.value,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText: 'Loan Amount',
                                                       labelStyle:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .bodyText1,
-                                                      hintText: 'Enter Loan Amount',
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                      hintText:
+                                                          'Enter Loan Amount',
                                                       hintStyle:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .subtitle2,
-                                                      enabledBorder: OutlineInputBorder(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2,
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                              .of(
-                                                              context)
+                                                                  .of(context)
                                                               .borderColor,
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      focusedBorder: OutlineInputBorder(
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                              .of(
-                                                              context)
+                                                                  .of(context)
                                                               .borderColor,
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      errorBorder: OutlineInputBorder(
-                                                        borderSide: const BorderSide(
-                                                          color: Color(
-                                                              0x00000000),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                        borderSide: const BorderSide(
-                                                          color: Color(
-                                                              0x00000000),
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .alternate,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
                                                       contentPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          20.0, 0.0, 0.0, 0.0),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              20.0,
+                                                              0.0,
+                                                              0.0,
+                                                              0.0),
                                                     ),
-                                                    style: FlutterFlowTheme
-                                                        .of(context)
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText1,
                                                     maxLines: null,
                                                   ),
@@ -1511,90 +1504,97 @@ class _TransactionEditState extends State<TransactionEdit> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsetsDirectional
-                                              .fromSTEB(
-                                              10.0, 10.0, 10.0, 0.0),
+                                              .fromSTEB(10.0, 10.0, 10.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment: MainAxisAlignment
-                                                .center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 0.0, 5.0, 0.0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                          0.0, 0.0, 5.0, 0.0),
                                                   child: TextFormField(
-                                                    controller: tc.loanAccount
-                                                        .value,
+                                                    controller:
+                                                        tc.loanAccount.value,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText: 'Loan Account',
                                                       labelStyle:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .bodyText1,
-                                                      hintText: 'Enter Loan Account',
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyText1,
+                                                      hintText:
+                                                          'Enter Loan Account',
                                                       hintStyle:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .subtitle2,
-                                                      enabledBorder: OutlineInputBorder(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2,
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                              .of(
-                                                              context)
+                                                                  .of(context)
                                                               .borderColor,
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      focusedBorder: OutlineInputBorder(
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color: FlutterFlowTheme
-                                                              .of(
-                                                              context)
+                                                                  .of(context)
                                                               .borderColor,
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                      errorBorder: OutlineInputBorder(
-                                                        borderSide: const BorderSide(
-                                                          color: Color(
-                                                              0x00000000),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                        borderSide: const BorderSide(
-                                                          color: Color(
-                                                              0x00000000),
+                                                          OutlineInputBorder(
+                                                        borderSide:
+                                                            const BorderSide(
+                                                          color:
+                                                              Color(0x00000000),
                                                           width: 1.0,
                                                         ),
                                                         borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                      FlutterFlowTheme
-                                                          .of(context)
-                                                          .alternate,
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .alternate,
                                                       contentPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(
-                                                          20.0, 0.0, 0.0, 0.0),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              20.0,
+                                                              0.0,
+                                                              0.0,
+                                                              0.0),
                                                     ),
-                                                    style: FlutterFlowTheme
-                                                        .of(context)
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText1,
                                                     maxLines: null,
                                                   ),
@@ -1612,8 +1612,8 @@ class _TransactionEditState extends State<TransactionEdit> {
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment
-                                        .spaceEvenly,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1627,31 +1627,32 @@ class _TransactionEditState extends State<TransactionEdit> {
                                               width: 100.0,
                                               height: 30.0,
                                               padding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
                                               iconPadding:
-                                              const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                              color: FlutterFlowTheme
-                                                  .of(context)
-                                                  .primaryColor,
-                                              textStyle: FlutterFlowTheme
-                                                  .of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                fontFamily: 'Poppins',
-                                                color: FlutterFlowTheme
-                                                    .of(context)
-                                                    .primaryText,
-                                              ),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius
-                                                  .circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ],
@@ -1662,35 +1663,30 @@ class _TransactionEditState extends State<TransactionEdit> {
                                         },
                                         child: Container(
                                           alignment: Alignment.center,
-                                          width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.35,
-                                          height: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .height *
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
                                               0.04,
                                           decoration: BoxDecoration(
-                                            color: FlutterFlowTheme
-                                                .of(context)
+                                            color: FlutterFlowTheme.of(context)
                                                 .buttonColor,
-                                            borderRadius: BorderRadius.circular(
-                                                10.0),
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
                                           ),
                                           child: Text(
                                             'Plot Details',
-                                            style: FlutterFlowTheme
-                                                .of(context)
+                                            style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme
-                                                  .of(
-                                                  context)
-                                                  .btnText,
-                                            ),
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .btnText,
+                                                ),
                                           ),
                                         ),
                                       ),
