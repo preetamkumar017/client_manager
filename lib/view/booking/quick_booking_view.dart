@@ -83,6 +83,7 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 0, 0),
                               child: Form(
+                                key: qbController.formKey.value,
                                 autovalidateMode: AutovalidateMode.disabled,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -201,6 +202,12 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
+                                        validator:(value) {
+                                          if (value == "") {
+                                            return 'this filed is required';
+                                          }
+                                          return null;
+                                        },
                                       ),
                                     ),
                                     Padding(
@@ -293,12 +300,14 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                                               .fromSTEB(
                                                           20, 0, 0, 0),
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                                style: FlutterFlowTheme.of(context)
                                                         .bodyMedium,
-                                                // validator: _model
-                                                //     .textController2Validator
-                                                //     .asValidator(context),
+                                                validator:(value) {
+                                                  if (value == "") {
+                                                    return 'this filed is required';
+                                                  }
+                                                  return null;
+                                                },
                                               ),
                                             ),
                                           ),
@@ -386,9 +395,12 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium,
-                                                // validator: _model
-                                                //     .textController3Validator
-                                                //     .asValidator(context),
+                                                validator:(value) {
+                                                  if (value == "") {
+                                                    return 'this filed is required';
+                                                  }
+                                                  return null;
+                                                },
                                               ),
                                             ),
                                           ),
@@ -487,9 +499,12 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium,
-                                                // validator: _model
-                                                //     .textController4Validator
-                                                //     .asValidator(context),
+                                                validator:(value) {
+                                                  if (value == "") {
+                                                    return 'this filed is required';
+                                                  }
+                                                  return null;
+                                                },
                                               ),
                                             ),
                                           ),
@@ -579,9 +594,12 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium,
-                                                // validator: _model
-                                                //     .textController5Validator
-                                                //     .asValidator(context),
+                                                validator:(value) {
+                                                  if (value == "") {
+                                                    return 'this filed is required';
+                                                  }
+                                                  return null;
+                                                },
                                               ),
                                             ),
                                           ),
@@ -653,9 +671,12 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium,
-                                        // validator: _model
-                                        //     .textController6Validator
-                                        //     .asValidator(context),
+                                        validator:(value) {
+                                          if (value == "") {
+                                            return 'this filed is required';
+                                          }
+                                          return null;
+                                        },
                                       ),
                                     ),
                                     // Generated code for this Row Widget...
@@ -667,9 +688,14 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                         children: [
                                           FFButtonWidget(
                                             onPressed: () {
-                                              print('Button pressed ...');
-                                              qbController.book.value = Booking.sendLink;
-                                              qbController.submit();
+                                            final isValid = qbController.formKey.value.currentState!.validate();
+                                            if (!isValid) {
+                                                return;
+                                              }else
+                                              {
+                                                qbController.book.value = Booking.sendLink;
+                                                qbController.submit();
+                                              }
                                             },
                                             text: 'Send link to Client',
                                             icon: const Icon(
@@ -695,9 +721,14 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                           ),
                                           FFButtonWidget(
                                             onPressed: () {
-                                              print('Button pressed ...');
-                                              qbController.book.value = Booking.payNow;
-                                              qbController.submit();
+                                              final isValid = qbController.formKey.value.currentState!.validate();
+                                              if (!isValid) {
+                                                return;
+                                              }else
+                                              {
+                                                qbController.book.value = Booking.payNow;
+                                                qbController.submit();
+                                              }
                                             },
                                             text: 'Pay Now',
                                             icon: const Icon(

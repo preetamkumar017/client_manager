@@ -1,9 +1,14 @@
-import 'dart:developer';
 
+import 'package:client_booking/repository/booking_repository/quick_booking_repository.dart';
+import 'package:client_booking/res/routes/routes_name.dart';
+import 'package:client_booking/utils/utils.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 class PayNowController extends GetxController
 {
+  final _repo = QuickBookingRepository();
+  Rx<GlobalKey<FormState>> formKey = GlobalKey<FormState>().obs;
+
   RxMap screenData = {}.obs;
   get getScreenData => screenData.value;
   setScreenData(Map value) => screenData.value = value;
@@ -29,6 +34,13 @@ class PayNowController extends GetxController
   get getUpi => upi.value;
   setUpi(bool value) => upi.value = value;
 
+  Rx<TextEditingController> tranceId = TextEditingController().obs;
+  get getTranceId => tranceId.value.text;
+
+  RxStatus loading = RxStatus.empty();
+  get getLoading => loading;
+  setLoading(RxStatus data)=> loading=data;
+
 
   signScreenData()
   {
@@ -36,5 +48,34 @@ class PayNowController extends GetxController
     setAmount(screenData['amount'].toString());
     setCalcId(screenData['calc_id'].toString());
     setLink(screenData['payment_link'].toString());
+  }
+
+  submit()
+  {
+    setLoading(RxStatus.loading());
+      Map<String,String> data = {
+        "booking_id":getBid.toString(),
+        "trans_id":getTranceId,
+        "paid_booking_amt":getAmount.toString(),
+        "payment_mode":getUpi ? "Upi" : "Online",
+      };
+      // log(data.toString());
+
+    _repo.quickTransaction(data).then((value){
+      // debugPrint(value.toJson().toString());
+      if(value.code == 200)
+      {
+        Utils.toastMessage("Transaction Added Successfully");
+        Get.offNamed(RouteName.dashboardView);
+      }else
+      {
+        Utils.toastMessage("Something Wants Wrong");
+      }
+      setLoading(RxStatus.success());
+    }).onError((error, stackTrace) {
+      setLoading(RxStatus.error());
+      debugPrint(error.toString());
+    });
+
   }
 }

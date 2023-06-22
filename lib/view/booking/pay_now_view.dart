@@ -90,7 +90,7 @@ class _PayNowViewState extends State<PayNowView> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0, 5, 0, 0),
                               child: Form(
-                                // key: _model.formKey,
+                                key: pnController.formKey.value,
                                 // autovalidateMode: AutovalidateMode.disabled,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -117,6 +117,7 @@ class _PayNowViewState extends State<PayNowView> {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(0, 10, 0, 0),
                                         child: FlutterFlowRadioButton(
+                                          initialValue: 'UPI/Link',
                                           options: [
                                             'UPI/Link',
                                             'NEFT/RTGS/IMPS'
@@ -692,9 +693,10 @@ class _PayNowViewState extends State<PayNowView> {
                                             const EdgeInsetsDirectional
                                                 .fromSTEB(10, 10, 10, 0),
                                             child: TextFormField(
-                                              // controller: _model.textController,
+                                              controller: pnController.tranceId.value,
                                               autofocus: true,
                                               obscureText: false,
+                                              keyboardType: TextInputType.number,
                                               decoration: InputDecoration(
                                                 labelText: 'Transaction Id',
                                                 labelStyle:
@@ -770,13 +772,17 @@ class _PayNowViewState extends State<PayNowView> {
                                                     .fromSTEB(
                                                     20, 0, 0, 0),
                                               ),
-                                              style:
-                                              FlutterFlowTheme
+                                              style: FlutterFlowTheme
                                                   .of(context)
                                                   .bodyMedium,
-                                              // validator: _model
-                                              //     .textControllerValidator
-                                              //     .asValidator(context),
+                                              validator:(value) {
+                                                if (value == "") {
+                                                  return 'this filed is required';
+                                                } else if (value!.length < 10) {
+                                                  return 'Enter valid Transaction id';
+                                                }
+                                                return null;
+                                              },
                                             ),
                                           ),
                                         ],
@@ -790,7 +796,13 @@ class _PayNowViewState extends State<PayNowView> {
                                             .fromSTEB(0, 30, 0, 20),
                                         child: FFButtonWidget(
                                           onPressed: () {
-                                            print('Button pressed ...');
+                                            final isValid = pnController.formKey.value.currentState!.validate();
+                                            if (!isValid) {
+                                              return;
+                                            }else
+                                              {
+                                                pnController.submit();
+                                              }
                                           },
                                           text: 'Done with Payment',
                                           icon: Icon(

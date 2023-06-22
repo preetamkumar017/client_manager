@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:client_booking/models/booking_model/client_data_calc_model.dart';
 
 class QuickBookingController extends GetxController {
+  Rx<GlobalKey<FormState>> formKey = GlobalKey<FormState>().obs;
   final _repo = QuickBookingRepository();
   final clientName = TextEditingController().obs;
   final mobile = TextEditingController().obs;
@@ -102,7 +103,7 @@ class QuickBookingController extends GetxController {
     {
       Utils.toastMessage("pay now");
       Map data = {
-        "booking_id": bid,
+        "booking_id": bid.value,
         "amount":plan.value,
         "calc_id":calcId.value,
         "payment_link":paymentLink.value.text,
@@ -110,8 +111,30 @@ class QuickBookingController extends GetxController {
       Get.toNamed(RouteName.payNowView,arguments: data);
     }else
       {
+        Map data1 = {
+        "booking_id": bid.value,
+        "mail_type":"link",
+      };
         Utils.toastMessage("Send Link");
-        // _repo.quickBooking(data)
+        _repo.sendMail(data1).then((value) {
+          log(value.toJson().toString());
+          if(value==200)
+            {
+              Utils.toastMessage("Mail Successfully");
+              Map data = {
+                "booking_id": bid.value,
+                "amount":plan.value,
+                "calc_id":calcId.value,
+                "payment_link":paymentLink.value.text,
+              };
+              Get.toNamed(RouteName.payNowView,arguments: data);
+            }else
+              {
+                Utils.toastMessage("Mail Failure");
+              }
+        }).onError((error, stackTrace) {
+          Utils.toastMessage(error.toString());
+        });
       }
   }
 

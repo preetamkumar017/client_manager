@@ -12,7 +12,9 @@ class AppUrl {
   // static const String bookingFormUrl  = "https://www.ukcdesigner.in/client_manager/index.php/bookingApi";
   // static const String bookingFormUrlForDownload  = "https://www.ukcdesigner.in/client_manager/index.php/welcome/";
 
-  static const String bookingFormUrl  = "http://192.168.1.4/cost_calc/index.php/bookingApi";
+  static const String domain  = "http://192.168.1.4";
+  static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
+  static const String mailUrl  = "$domain/cost_calc/index.php/Mail";
   static const String bookingFormUrlForDownload  = "http://192.168.1.4/cost_calc/index.php/welcome/client_booking_pdf/";
 
   static const String login = '$bookingFormUrl/login' ;
@@ -33,7 +35,8 @@ class AppUrl {
   static const String dataFromCalc  = "$bookingFormUrl/ajax_client_data";
 
   static const String quickBooking  = "$bookingFormUrl/ajax_quick_booking";
-  static const String sendMail  = "$bookingFormUrl/ajax_quick_booking";
+  static const String quickTransaction  = "$bookingFormUrl/ajax_quick_transaction";
+  static const String sendMail  = "$mailUrl/send_booking_mail";
 
 
 

@@ -19,10 +19,20 @@ class QuickBookingRepository
       rethrow ;
     }
   }
+  Future<QuickBookingModel> quickTransaction(var data) async{
+    try {
+      dynamic response = await _apiService.postApi(data, AppUrl.quickTransaction);
+      debugPrint(response.toString());
+      return response = QuickBookingModel.fromJson(response);
+    }catch(e)
+    {
+      rethrow ;
+    }
+  }
 
   Future<ResultModel> sendMail(var data) async{
     try {
-      dynamic response = await _apiService.postApi(data, AppUrl.quickBooking);
+      dynamic response = await _apiService.postApi(data, AppUrl.sendMail);
       debugPrint(response.toString());
       return response = ResultModel.fromJson(response);
     }catch(e)

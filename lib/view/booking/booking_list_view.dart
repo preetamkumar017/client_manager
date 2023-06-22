@@ -653,13 +653,20 @@ class _BookingListViewState extends State<BookingListView> {
                       child: ElevatedButton(
                         child: const Text("Submit"),
                         onPressed: () {
+                          // if(importController.importText.text=="")
+                          //   {
+                          //     Utils.toastMessage("Please enter Mobile Number");
+                          //   }else
+                          //     {
+                          //       importController.getData(importController.importText.text, context);
+                          //     }
                           if(importController.importText.text=="")
-                            {
-                              Utils.toastMessage("Please enter Mobile Number");
-                            }else
-                              {
-                                importController.getData(importController.importText.text, context);
-                              }
+                          {
+                            Utils.toastMessage("Please enter Mobile Number");
+                          }else
+                          {
+                            importController.getDataFromCalc(importController.importText.text, context);
+                          }
 
                         },
                       ),

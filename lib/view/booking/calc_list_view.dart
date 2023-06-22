@@ -5,7 +5,6 @@ import 'package:client_booking/res/routes/routes_name.dart';
 import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
 import 'package:client_booking/view_models/controller/booking/booking_form/import_controller.dart';
-import 'package:client_booking/view_models/controller/booking/quick_booking_controller.dart';
 import 'package:get/get.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
@@ -94,7 +93,7 @@ class _CostListViewState extends State<CostListView> {
                               5, 0, 0, 0),
                           child: Obx(() {
                             return Text(
-                              blc.name.value ?? "",
+                              blc.name.value,
                               style: FlutterFlowTheme
                                   .of(context)
                                   .titleSmall,
@@ -493,13 +492,13 @@ class _CostListViewState extends State<CostListView> {
                                               FFButtonWidget(
                                                 onPressed: () {
                                                   print('Button pressed ...');
-                                                  Map<String,String> screenData = {
-                                                    "id":calcData.id ?? "",
-                                                    "booking_id":calcData.bookingId ?? "",
-                                                    "name":calcData.clientName ?? "",
-                                                    "mobile":calcData.clientMob ?? "",
-                                                    "totalAmount":calcData.totalCost ?? "",
-                                                  };
+                                                  // Map<String,String> screenData = {
+                                                  //   "id":calcData.id ?? "",
+                                                  //   "booking_id":calcData.bookingId ?? "",
+                                                  //   "name":calcData.clientName ?? "",
+                                                  //   "mobile":calcData.clientMob ?? "",
+                                                  //   "totalAmount":calcData.totalCost ?? "",
+                                                  // };
                                                    Get.toNamed(RouteName.quickBookingView,arguments: calcData);
                                                 },
                                                 text: 'Book Now',
@@ -575,82 +574,83 @@ class _CostListViewState extends State<CostListView> {
                                                   ],
                                                 ),
                                               ),
-                                              Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                mainAxisAlignment: MainAxisAlignment.end,
-                                                children: [
-                                                  Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 1,
-                                                    shape: RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(5),
-                                                    ),
-                                                    child: Container(
-                                                      width: 20,
-                                                      height: 20,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme.of(context)
-                                                            .secondaryBackground,
-                                                        borderRadius: BorderRadius.circular(5),
-                                                      ),
-                                                      child: Icon(
-                                                        Icons.download_rounded,
-                                                        color: FlutterFlowTheme.of(context).success,
-                                                        size: 12,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                    const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 1,
-                                                      shape: RoundedRectangleBorder(
-                                                        borderRadius: BorderRadius.circular(5),
-                                                      ),
-                                                      child: Container(
-                                                        width: 20,
-                                                        height: 20,
-                                                        decoration: BoxDecoration(
-                                                          color: FlutterFlowTheme.of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius: BorderRadius.circular(5),
-                                                        ),
-                                                        child: Icon(
-                                                          Icons.edit_rounded,
-                                                          color: FlutterFlowTheme.of(context).info,
-                                                          size: 12,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 1,
-                                                      shape: RoundedRectangleBorder(
-                                                        borderRadius: BorderRadius.circular(5),
-                                                      ),
-                                                      child: Container(
-                                                        width: 20,
-                                                        height: 20,
-                                                        decoration: BoxDecoration(
-                                                          color: FlutterFlowTheme.of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius: BorderRadius.circular(5),
-                                                        ),
-                                                        child: Icon(
-                                                          Icons.delete,
-                                                          color: FlutterFlowTheme.of(context).error,
-                                                          size: 12,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
+                                              // Row(
+                                              //   mainAxisSize: MainAxisSize.min,
+                                              //   mainAxisAlignment: MainAxisAlignment.end,
+                                              //   children: [
+                                              //     Material(
+                                              //       color: Colors.transparent,
+                                              //       elevation: 1,
+                                              //       shape: RoundedRectangleBorder(
+                                              //         borderRadius: BorderRadius.circular(5),
+                                              //       ),
+                                              //       child: Container(
+                                              //         width: 20,
+                                              //         height: 20,
+                                              //         decoration: BoxDecoration(
+                                              //           color: FlutterFlowTheme.of(context)
+                                              //               .secondaryBackground,
+                                              //           borderRadius: BorderRadius.circular(5),
+                                              //         ),
+                                              //         child: Icon(
+                                              //           Icons.download_rounded,
+                                              //           color: FlutterFlowTheme.of(context).success,
+                                              //           size: 12,
+                                              //         ),
+                                              //       ),
+                                              //     ),
+                                              //     Padding(
+                                              //       padding:
+                                              //       const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                              //       child: Material(
+                                              //         color: Colors.transparent,
+                                              //         elevation: 1,
+                                              //         shape: RoundedRectangleBorder(
+                                              //           borderRadius: BorderRadius.circular(5),
+                                              //         ),
+                                              //         child:
+                                              //         Container(
+                                              //           width: 20,
+                                              //           height: 20,
+                                              //           decoration: BoxDecoration(
+                                              //             color: FlutterFlowTheme.of(context)
+                                              //                 .secondaryBackground,
+                                              //             borderRadius: BorderRadius.circular(5),
+                                              //           ),
+                                              //           child: Icon(
+                                              //             Icons.edit_rounded,
+                                              //             color: FlutterFlowTheme.of(context).info,
+                                              //             size: 12,
+                                              //           ),
+                                              //         ),
+                                              //       ),
+                                              //     ),
+                                              //     Padding(
+                                              //       padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                                              //       child: Material(
+                                              //         color: Colors.transparent,
+                                              //         elevation: 1,
+                                              //         shape: RoundedRectangleBorder(
+                                              //           borderRadius: BorderRadius.circular(5),
+                                              //         ),
+                                              //         child: Container(
+                                              //           width: 20,
+                                              //           height: 20,
+                                              //           decoration: BoxDecoration(
+                                              //             color: FlutterFlowTheme.of(context)
+                                              //                 .secondaryBackground,
+                                              //             borderRadius: BorderRadius.circular(5),
+                                              //           ),
+                                              //           child: Icon(
+                                              //             Icons.delete,
+                                              //             color: FlutterFlowTheme.of(context).error,
+                                              //             size: 12,
+                                              //           ),
+                                              //         ),
+                                              //       ),
+                                              //     ),
+                                              //   ],
+                                              // ),
                                             ],
                                           ),
                                         ),
