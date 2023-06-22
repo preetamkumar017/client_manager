@@ -118,7 +118,7 @@ class QuickBookingController extends GetxController {
         Utils.toastMessage("Send Link");
         _repo.sendMail(data1).then((value) {
           log(value.toJson().toString());
-          if(value==200)
+          if(value.code==200)
             {
               Utils.toastMessage("Mail Successfully");
               Map data = {

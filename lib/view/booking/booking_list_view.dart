@@ -1,4 +1,6 @@
 
+// ignore_for_file: deprecated_member_use_from_same_package, sort_child_properties_last
+
 import 'package:client_booking/data/response/status.dart';
 import 'package:client_booking/res/app_url/app_url.dart';
 import 'package:client_booking/res/components/general_exception.dart';
@@ -666,6 +668,7 @@ class _BookingListViewState extends State<BookingListView> {
                           }else
                           {
                             importController.getDataFromCalc(importController.importText.text, context);
+                            importController.importText.text = "";
                           }
 
                         },

@@ -1054,6 +1054,7 @@ class _DashboardViewState extends State<DashboardView> {
                             }else
                             {
                               importController.getDataFromCalc(importController.importText.text, context);
+                              importController.importText.text = "";
                             }
 
                           },
