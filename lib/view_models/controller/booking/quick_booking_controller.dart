@@ -101,7 +101,13 @@ class QuickBookingController extends GetxController {
     if(book == Booking.payNow)
     {
       Utils.toastMessage("pay now");
-      Get.toNamed(RouteName.payNowView);
+      Map data = {
+        "booking_id": bid,
+        "amount":plan.value,
+        "calc_id":calcId.value,
+        "payment_link":paymentLink.value.text,
+      };
+      Get.toNamed(RouteName.payNowView,arguments: data);
     }else
       {
         Utils.toastMessage("Send Link");
