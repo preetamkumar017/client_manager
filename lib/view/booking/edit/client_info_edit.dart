@@ -1,5 +1,6 @@
+// ignore_for_file: deprecated_member_use_from_same_package
+
 import 'dart:convert';
-import 'dart:developer';
 import 'package:client_booking/view/flutter_flow/flutter_flow_radio_button.dart';
 import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:client_booking/view_models/controller/booking/booking_details_controller.dart';
@@ -33,19 +34,19 @@ class _ClientInfoEditState extends State<ClientInfoEdit> {
   }
 
   void assign() {
-    cIC.lastId.value = clientinfo.id!;
-    cIC.clientName.value.text = clientinfo.clientName!;
-    cIC.fathersName.value.text = clientinfo.spouseName!;
-    cIC.age.value.text = clientinfo.age!;
-    cIC.occupation.value.text = clientinfo.occupation!;
-    cIC.mobile.value.text = clientinfo.mobileNo!;
-    cIC.email.value.text = clientinfo.emailId!;
-    cIC.pan.value.text = clientinfo.panNo!;
-    cIC.aadhaar.value.text = clientinfo.aadharNo!;
+    cIC.lastId.value = clientinfo.id ?? "";
+    cIC.clientName.value.text = clientinfo.clientName ?? "";
+    cIC.fathersName.value.text = clientinfo.spouseName ?? "";
+    cIC.age.value.text = clientinfo.age ?? "";
+    cIC.occupation.value.text = clientinfo.occupation ?? "";
+    cIC.mobile.value.text = clientinfo.mobileNo ?? "";
+    cIC.email.value.text = clientinfo.emailId ?? "";
+    cIC.pan.value.text = clientinfo.panNo ?? "";
+    cIC.aadhaar.value.text = clientinfo.aadharNo ?? "";
 
-    cIC.gender.value = clientinfo.gender!;
+    cIC.gender.value = clientinfo.gender ?? "";
 
-    var permanent = jsonDecode(clientinfo.permanentAddr.toString());
+    var permanent = jsonDecode(clientinfo.permanentAddr ?? '{"p_hno":"","p_street":"","p_landmark":"","p_city":"","p_state":"","p_pincode":""}');
     //permanent
     cIC.permanentHouseNo.value.text = permanent['p_hno'];
     cIC.permanentColony.value.text = permanent['p_street'];
@@ -54,14 +55,14 @@ class _ClientInfoEditState extends State<ClientInfoEdit> {
     cIC.permanentState.value.text = permanent['p_state'];
     cIC.permanentPin.value.text = permanent['p_pincode'];
     //present
-    var present = jsonDecode(clientinfo.presentAddr.toString());
+    var present = jsonDecode(clientinfo.presentAddr ?? '{"r_hno":"","r_street":"","r_landmark":"","r_city":"","r_state":"","r_pincode":""}');
     cIC.presentHouseNo.value.text = present['r_hno'];
     cIC.presentColony.value.text = present['r_street'];
     cIC.presentLandmark.value.text = present['r_landmark'];
     cIC.presentCity.value.text = present['r_city'];
     cIC.presentState.value.text = present['r_state'];
     cIC.presentPin.value.text = present['r_pincode'];
-    var officeAddr = jsonDecode(clientinfo.officeAddr.toString());
+    var officeAddr = jsonDecode(clientinfo.officeAddr ?? '{"o_hno":"","o_street":"","o_landmark":"","o_city":"","o_state":"","o_pincode":""}');
 
     ///office
     cIC.officeHouseNo.value.text = officeAddr['o_hno'];

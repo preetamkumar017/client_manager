@@ -1,5 +1,6 @@
+// ignore_for_file: deprecated_member_use_from_same_package
+
 import 'dart:convert';
-import 'dart:developer';
 import 'package:client_booking/data/response/status.dart';
 import 'package:client_booking/res/components/general_exception.dart';
 import 'package:client_booking/res/components/internet_exceptions_widget.dart';
@@ -38,9 +39,10 @@ class ClientInfoView extends StatelessWidget {
               }
             case Status.COMPLETED:
               var ci = bkc.bookingDetails.value.result!.clientInfo;
-              var paddress = jsonDecode(ci!.presentAddr ?? "");
-              var permanentAddress = jsonDecode(ci.permanentAddr ?? "");
-              var officeAddress = jsonDecode(ci.officeAddr ?? "");
+
+              var paddress = jsonDecode(ci!.presentAddr ?? '{"p_hno":"","p_street":"","p_landmark":"","p_city":"","p_state":"","p_pincode":""}');
+              var permanentAddress = jsonDecode(ci.permanentAddr ?? '{"r_hno":"","r_street":"","r_landmark":"","r_city":"","r_state":"","r_pincode":""}');
+              var officeAddress = jsonDecode(ci.officeAddr ?? '{"o_hno":"","o_street":"","o_landmark":"","o_city":"","o_state":"","o_pincode":""}');
               return Container(
                 width: MediaQuery.of(context).size.width * 1.0,
                 height: MediaQuery.of(context).size.height * 0.9,
