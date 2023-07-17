@@ -12,10 +12,12 @@ class AppUrl {
   // static const String bookingFormUrl  = "https://www.ukcdesigner.in/client_manager/index.php/bookingApi";
   // static const String bookingFormUrlForDownload  = "https://www.ukcdesigner.in/client_manager/index.php/welcome/";
 
-  static const String domain  = "http://192.168.1.4";
-  static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
-  static const String mailUrl  = "$domain/cost_calc/index.php/Mail";
-  static const String bookingFormUrlForDownload  = "http://192.168.1.4/cost_calc/index.php/welcome/client_manager_pdf/";
+  // static const String domain  = "http://192.168.1.4";
+  // static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
+  static const String domain  = "https://www.ukcdesigner.in";
+  static const String bookingFormUrl  = "$domain/client_manager/index.php/bookingApi";
+  static const String mailUrl  = "$domain/client_manager/index.php/Mail";
+  static const String bookingFormUrlForDownload  = "$domain/client_manager/index.php/welcome/client_manager_pdf/";
 
   static const String login = '$bookingFormUrl/login' ;
   static const String ajaxClientInfoUrl  = "$bookingFormUrl/ajax_client_info";

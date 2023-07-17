@@ -1,4 +1,6 @@
 
+import 'dart:developer';
+
 import 'package:client_manager/repository/booking_repository/quick_booking_repository.dart';
 import 'package:client_manager/res/routes/routes_name.dart';
 import 'package:client_manager/utils/utils.dart';
@@ -48,6 +50,7 @@ class PayNowController extends GetxController
     setAmount(screenData['amount'].toString());
     setCalcId(screenData['calc_id'].toString());
     setLink(screenData['payment_link'].toString());
+    log(screenData.toString());
   }
 
   submit()
@@ -66,7 +69,9 @@ class PayNowController extends GetxController
       if(value.code == 200)
       {
         Utils.toastMessage("Transaction Added Successfully");
-        Get.offNamed(RouteName.dashboardView);
+        Future.delayed(Duration(seconds: 1 )).then((value) {
+          Get.offNamed(RouteName.dashboardView);
+        });
       }else
       {
         Utils.toastMessage("Something Wants Wrong");

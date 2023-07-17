@@ -102,8 +102,9 @@ class _ClientInfoEditState extends State<ClientInfoEdit> {
                     margin: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Stack(
                       children:[
-                        IconButton(onPressed: (){
-                          Get.back();
+                        IconButton(
+                            onPressed: (){
+                          Get.back(result: true, canPop: true);
                         }, icon:  Icon(Icons.arrow_back_rounded,
                             color: FlutterFlowTheme.of(context).iconColor)),
                         Padding(
@@ -620,6 +621,7 @@ class _ClientInfoEditState extends State<ClientInfoEdit> {
                                     child: TextFormField(
                                       controller: cIC.pan.value,
                                       obscureText: false,
+                                      textCapitalization: TextCapitalization.sentences,
                                       //maxLength: 10,
                                       decoration: InputDecoration(
                                         labelText: ' Enter PAN Number',

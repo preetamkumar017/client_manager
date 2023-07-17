@@ -20,9 +20,10 @@ class BookingListController extends GetxController
 
 
   Future<void> bookingListApi()async {
-    //  setRxRequestStatus(Status.LOADING);
+     setRxRequestStatus(Status.LOADING);
 
     _api.bookingList().then((value){
+      log(value.toJson().toString());
       setRxRequestStatus(Status.COMPLETED);
       setUserList(value);
     }).onError((error, stackTrace){

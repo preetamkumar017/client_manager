@@ -110,12 +110,13 @@ class _BookingListViewState extends State<BookingListView> {
                         if (blc.error.value == 'No internet') {
                           return InterNetExceptionWidget(
                             onPress: () {
-                              // homeController.refreshApi();
+                              blc.bookingListApi();
                             },
                           );
                         } else {
-                          return GeneralExceptionWidget(onPress: () {
-                            // homeController.refreshApi();
+                          return GeneralExceptionWidget(
+                              onPress: () {
+                            blc.bookingListApi();
                           });
                         }
 

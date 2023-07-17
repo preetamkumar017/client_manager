@@ -81,10 +81,12 @@ class QuickBookingController extends GetxController {
       if(value.code == 200)
         {
           Utils.toastMessage("Booking Added Successfully");
+          setBid(value.lastId.toString());
           afterBooking();
         }else if(value.code == 202)
           {
             Utils.toastMessage("Booking Updated Successfully");
+            setBid(value.lastId.toString());
             afterBooking();
           }else
             {
@@ -108,6 +110,7 @@ class QuickBookingController extends GetxController {
         "calc_id":calcId.value,
         "payment_link":paymentLink.value.text,
       };
+
       Get.toNamed(RouteName.payNowView,arguments: data);
     }else
       {

@@ -175,7 +175,7 @@ class ClientInfoController extends GetxController
       Utils.snackBar("Invalid Email", "Please enter a valid Email");
     } else if (pan.value.text == "") {
       Utils.snackBar("Field not found", "Please enter PAN Number");
-    } else if (!isValidPAN(pan.value.text)) {
+    } else if (!isValidPAN(pan.value.text.toUpperCase())) {
       Utils.snackBar("Invalid PAN Number", "Please enter a valid PAN Number");
     } else if (aadhaar.value.text == "") {
       Utils.snackBar("Field not found", "Please enter Aadhaar Number");
@@ -201,7 +201,7 @@ class ClientInfoController extends GetxController
         'gender': gender.value,
         'mobile_no': mobile.value.text,
         'email_id': email.value.text,
-        'pan_no': pan.value.text,
+        'pan_no': pan.value.text.toUpperCase(),
         'aadhar_no': aadhaar.value.text,
         'occupation': occupation.value.text,
         "p_hno": permanentHouseNo.value.text,
@@ -240,7 +240,8 @@ class ClientInfoController extends GetxController
           // Get.back(result: true, canPop: true);
         } else if (value.code == 201) {
           debugPrint("message");
-          // Get.back(result: true, canPop: true);
+          Utils.toastMessage("Successfully Update");
+          Get.back(result: true, canPop: true);
         } else if (value.code == 202) {
           Utils.snackBar("Mobile Number Already Exist", "Please Check on Booking List");
         }
