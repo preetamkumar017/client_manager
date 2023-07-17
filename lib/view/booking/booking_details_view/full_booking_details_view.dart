@@ -1,10 +1,10 @@
-import 'package:client_booking/view/booking/booking_details_view/attach_documents_view.dart';
-import 'package:client_booking/view/booking/booking_details_view/client_info_view.dart';
-import 'package:client_booking/view/booking/booking_details_view/decision_maker_view.dart';
-import 'package:client_booking/view/booking/booking_details_view/payee_view.dart';
-import 'package:client_booking/view/booking/booking_details_view/plot_details_view.dart';
-import 'package:client_booking/view/booking/booking_details_view/transaction_view.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/booking/booking_details_view/attach_documents_view.dart';
+import 'package:client_manager/view/booking/booking_details_view/client_info_view.dart';
+import 'package:client_manager/view/booking/booking_details_view/decision_maker_view.dart';
+import 'package:client_manager/view/booking/booking_details_view/payee_view.dart';
+import 'package:client_manager/view/booking/booking_details_view/plot_details_view.dart';
+import 'package:client_manager/view/booking/booking_details_view/transaction_view.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;

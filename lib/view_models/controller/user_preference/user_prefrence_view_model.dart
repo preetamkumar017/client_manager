@@ -1,6 +1,6 @@
 
 
-import 'package:client_booking/models/login/user_model.dart';
+import 'package:client_manager/models/login/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserPreference {

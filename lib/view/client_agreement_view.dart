@@ -1,8 +1,8 @@
-import 'package:client_booking/view/flutter_flow/flutter_flow_choice_chips.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_drop_down.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_radio_button.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_choice_chips.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_drop_down.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_radio_button.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
 

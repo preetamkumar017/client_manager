@@ -1,7 +1,7 @@
 
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view_models/controller/booking/booking_details_controller.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view_models/controller/booking/booking_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

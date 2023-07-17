@@ -1,6 +1,6 @@
-import 'package:client_booking/data/network/network_api_services.dart';
-import 'package:client_booking/models/home/user_list_model.dart';
-import 'package:client_booking/res/app_url/app_url.dart';
+import 'package:client_manager/data/network/network_api_services.dart';
+import 'package:client_manager/models/home/user_list_model.dart';
+import 'package:client_manager/res/app_url/app_url.dart';
 
 class HomeRepository {
 

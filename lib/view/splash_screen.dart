@@ -1,4 +1,4 @@
-import 'package:client_booking/view_models/services/splash_services.dart';
+import 'package:client_manager/view_models/services/splash_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

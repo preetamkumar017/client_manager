@@ -1,13 +1,13 @@
 import 'dart:developer';
 
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/booking_model/client_data_calc_model.dart';
-import 'package:client_booking/repository/booking_repository/booking_details_repository.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view/booking/booking_form_view.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/client_info.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/plot_details.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form1_controller.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/booking_model/client_data_calc_model.dart';
+import 'package:client_manager/repository/booking_repository/booking_details_repository.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view/booking/booking_form_view.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/client_info.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/plot_details.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form1_controller.dart';
 import 'package:cool_alert/cool_alert.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';

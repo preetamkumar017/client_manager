@@ -1,19 +1,19 @@
 
 // ignore_for_file: deprecated_member_use_from_same_package, sort_child_properties_last
 
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/res/app_url/app_url.dart';
-import 'package:client_booking/res/components/general_exception.dart';
-import 'package:client_booking/res/components/internet_exceptions_widget.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view_models/controller/booking/booking_details_controller.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/commitment.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/import_controller.dart';
-import 'package:client_booking/view_models/controller/booking/booking_list_controller.dart';
-import 'package:client_booking/view_models/controller/booking/download.dart';
-import 'package:client_booking/view_models/services/common_methods.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/res/app_url/app_url.dart';
+import 'package:client_manager/res/components/general_exception.dart';
+import 'package:client_manager/res/components/internet_exceptions_widget.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view_models/controller/booking/booking_details_controller.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/commitment.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/import_controller.dart';
+import 'package:client_manager/view_models/controller/booking/booking_list_controller.dart';
+import 'package:client_manager/view_models/controller/booking/download.dart';
+import 'package:client_manager/view_models/services/common_methods.dart';
 import 'package:get/get.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';

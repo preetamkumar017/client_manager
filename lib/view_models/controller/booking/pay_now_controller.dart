@@ -1,7 +1,7 @@
 
-import 'package:client_booking/repository/booking_repository/quick_booking_repository.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/utils/utils.dart';
+import 'package:client_manager/repository/booking_repository/quick_booking_repository.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 class PayNowController extends GetxController

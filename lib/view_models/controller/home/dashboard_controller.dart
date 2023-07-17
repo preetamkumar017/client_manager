@@ -1,8 +1,8 @@
 
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/home/dashboard_model.dart';
-import 'package:client_booking/repository/home_repository/dashboard_repository.dart';
-import 'package:client_booking/view_models/services/box_storage.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/home/dashboard_model.dart';
+import 'package:client_manager/repository/home_repository/dashboard_repository.dart';
+import 'package:client_manager/view_models/services/box_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

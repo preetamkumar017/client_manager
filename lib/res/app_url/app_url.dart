@@ -15,7 +15,7 @@ class AppUrl {
   static const String domain  = "http://192.168.1.4";
   static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
   static const String mailUrl  = "$domain/cost_calc/index.php/Mail";
-  static const String bookingFormUrlForDownload  = "http://192.168.1.4/cost_calc/index.php/welcome/client_booking_pdf/";
+  static const String bookingFormUrlForDownload  = "http://192.168.1.4/cost_calc/index.php/welcome/client_manager_pdf/";
 
   static const String login = '$bookingFormUrl/login' ;
   static const String ajaxClientInfoUrl  = "$bookingFormUrl/ajax_client_info";
@@ -37,6 +37,7 @@ class AppUrl {
   static const String quickBooking  = "$bookingFormUrl/ajax_quick_booking";
   static const String quickTransaction  = "$bookingFormUrl/ajax_quick_transaction";
   static const String sendMail  = "$mailUrl/send_booking_mail";
+
 
 
 

@@ -1,5 +1,5 @@
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view_models/services/box_storage.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view_models/services/box_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

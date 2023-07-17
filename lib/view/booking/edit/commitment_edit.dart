@@ -1,15 +1,15 @@
 import 'dart:developer';
 
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/booking_model/commitment_list_model.dart';
-import 'package:client_booking/res/components/general_exception.dart';
-import 'package:client_booking/res/components/internet_exceptions_widget.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_util.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/commitment.dart';
-import 'package:client_booking/view_models/services/common_methods.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/booking_model/commitment_list_model.dart';
+import 'package:client_manager/res/components/general_exception.dart';
+import 'package:client_manager/res/components/internet_exceptions_widget.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_util.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/commitment.dart';
+import 'package:client_manager/view_models/services/common_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

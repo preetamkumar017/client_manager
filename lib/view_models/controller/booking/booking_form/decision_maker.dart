@@ -1,9 +1,9 @@
 
-import 'package:client_booking/repository/booking_repository/booking_form_repository.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form1_controller.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/client_info.dart';
-import 'package:client_booking/view_models/services/box_storage.dart';
+import 'package:client_manager/repository/booking_repository/booking_form_repository.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form1_controller.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/client_info.dart';
+import 'package:client_manager/view_models/services/box_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';

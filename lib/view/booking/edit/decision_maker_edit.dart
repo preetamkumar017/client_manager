@@ -1,10 +1,10 @@
-import 'dart:convert';import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
-import 'package:client_booking/view_models/controller/booking/booking_details_controller.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/decision_maker.dart';
+import 'dart:convert';import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/booking/booking_details_controller.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/decision_maker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:client_booking/models/booking_model/booking_details_model.dart';
+import 'package:client_manager/models/booking_model/booking_details_model.dart';
 
 class DecisionMakerEdit extends StatefulWidget {
    const DecisionMakerEdit({Key? key}) : super(key: key);

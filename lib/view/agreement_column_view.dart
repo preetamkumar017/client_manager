@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
-import 'package:client_booking/view/flutter_flow/flutter_flow_drop_down.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_drop_down.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';

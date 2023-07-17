@@ -1,9 +1,9 @@
 
 import 'dart:developer';
 
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/booking_model/booking_details_model.dart';
-import 'package:client_booking/repository/booking_repository/booking_details_repository.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/booking_model/booking_details_model.dart';
+import 'package:client_manager/repository/booking_repository/booking_details_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,12 +1,12 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
 import 'dart:convert';
-import 'package:client_booking/view/flutter_flow/flutter_flow_radio_button.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view_models/controller/booking/booking_details_controller.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/client_info.dart';
-import 'package:client_booking/models/booking_model/booking_details_model.dart';
-import 'package:client_booking/view_models/services/common_methods.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_radio_button.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view_models/controller/booking/booking_details_controller.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/client_info.dart';
+import 'package:client_manager/models/booking_model/booking_details_model.dart';
+import 'package:client_manager/view_models/services/common_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

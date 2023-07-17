@@ -1,4 +1,4 @@
-import 'package:client_booking/view/flutter_flow/flutter_flow_util.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_util.dart';
 
 String myDateFormat(String date)
 {

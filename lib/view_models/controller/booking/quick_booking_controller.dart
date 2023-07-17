@@ -1,12 +1,12 @@
 import 'dart:developer';
 
-import 'package:client_booking/repository/booking_repository/quick_booking_repository.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view_models/services/box_storage.dart';
+import 'package:client_manager/repository/booking_repository/quick_booking_repository.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view_models/services/box_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:client_booking/models/booking_model/client_data_calc_model.dart';
+import 'package:client_manager/models/booking_model/client_data_calc_model.dart';
 
 class QuickBookingController extends GetxController {
   Rx<GlobalKey<FormState>> formKey = GlobalKey<FormState>().obs;

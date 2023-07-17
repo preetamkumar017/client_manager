@@ -2,8 +2,8 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:android_path_provider/android_path_provider.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view/booking/view_pdf.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view/booking/view_pdf.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 

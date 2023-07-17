@@ -1,11 +1,11 @@
 import 'dart:developer';
 
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/booking_model/commitment_list_model.dart';
-import 'package:client_booking/models/booking_model/get_commitment_model.dart';
-import 'package:client_booking/repository/booking_repository/commitment_list_repository.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view_models/services/box_storage.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/booking_model/commitment_list_model.dart';
+import 'package:client_manager/models/booking_model/get_commitment_model.dart';
+import 'package:client_manager/repository/booking_repository/commitment_list_repository.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view_models/services/box_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';

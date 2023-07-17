@@ -1,7 +1,7 @@
-import 'package:client_booking/repository/login_repository/login_repository.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view_models/services/box_storage.dart';
+import 'package:client_manager/repository/login_repository/login_repository.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view_models/services/box_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

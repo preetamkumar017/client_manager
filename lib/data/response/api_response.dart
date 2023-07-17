@@ -1,6 +1,6 @@
 
 
-import 'package:client_booking/data/response/status.dart';
+import 'package:client_manager/data/response/status.dart';
 
 class ApiResponse<T> {
 

@@ -1,5 +1,5 @@
-import 'package:client_booking/res/getx_loclization/languages.dart';
-import 'package:client_booking/res/routes/routes.dart';
+import 'package:client_manager/res/getx_loclization/languages.dart';
+import 'package:client_manager/res/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

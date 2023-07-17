@@ -1,7 +1,7 @@
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/res/components/general_exception.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view_models/controller/user_preference/user_prefrence_view_model.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/res/components/general_exception.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view_models/controller/user_preference/user_prefrence_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

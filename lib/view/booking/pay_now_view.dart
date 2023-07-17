@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:client_booking/view/flutter_flow/flutter_flow_radio_button.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
-import 'package:client_booking/view_models/controller/booking/pay_now_controller.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_radio_button.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/booking/pay_now_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';

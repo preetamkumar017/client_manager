@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:client_booking/utils/utils.dart';
+import 'package:client_manager/utils/utils.dart';
 import 'package:flutter/foundation.dart';
-import 'package:client_booking/data/network/base_api_services.dart';
+import 'package:client_manager/data/network/base_api_services.dart';
 import 'package:http/http.dart' as http;
 
 import '../app_exceptions.dart';
@@ -24,7 +24,7 @@ class NetworkApiServices extends BaseApiServices {
 
       final response = await http.get(Uri.parse(url)).timeout( const Duration(seconds: 10));
       responseJson  = returnResponse(response) ;
-      // debugPrint(responseJson);
+      debugPrint(responseJson);
     }on SocketException {
       throw InternetException('');
     }on RequestTimeOut {
@@ -48,8 +48,8 @@ class NetworkApiServices extends BaseApiServices {
       final response = await http.post(Uri.parse(url),
         body: data
       ).timeout( const Duration(seconds: 10));
-      // Utils.snackBar("",response.body.toString());
       responseJson  = returnResponse(response) ;
+      // debugPrint(responseJson);
     }on SocketException {
       throw InternetException('');
     }on RequestTimeOut {
@@ -78,7 +78,7 @@ class NetworkApiServices extends BaseApiServices {
 
     }
     if (kDebugMode) {
-      //debugPrint(responseJson);
+      debugPrint(responseJson);
     }
     return responseJson ;
 

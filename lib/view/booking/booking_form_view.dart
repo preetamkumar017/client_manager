@@ -1,8 +1,7 @@
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_util.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/client_info.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form1_controller.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/client_info.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form1_controller.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
@@ -292,8 +291,9 @@ class _BookingFormView1State extends State<BookingFormView1> {
                                                               0.0),
                                                           child: InkWell(
                                                             onTap: () async {
-                                                              context.pushNamed(
-                                                                  'bookingformsreen2');
+                                                              // context.pushNamed(
+                                                              //     'bookingformsreen2');
+                                                              Get.toNamed(RouteName.bookingForm2);
                                                             },
                                                             child: Text(
                                                               'Total ₹ 1,00,000',

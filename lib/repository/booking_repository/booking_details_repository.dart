@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:client_booking/data/network/network_api_services.dart';
-import 'package:client_booking/models/booking_model/booking_details_model.dart';
-import 'package:client_booking/models/booking_model/client_data_calc_model.dart';
-import 'package:client_booking/res/app_url/app_url.dart';
+import 'package:client_manager/data/network/network_api_services.dart';
+import 'package:client_manager/models/booking_model/booking_details_model.dart';
+import 'package:client_manager/models/booking_model/client_data_calc_model.dart';
+import 'package:client_manager/res/app_url/app_url.dart';
 import 'package:flutter/material.dart';
 
 class BookingDetailsRepository {

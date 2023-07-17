@@ -1,13 +1,13 @@
 import 'dart:developer';
 
-import 'package:client_booking/view/booking/tabs/attach_documents.dart';
-import 'package:client_booking/view/booking/tabs/client_info_tab.dart';
-import 'package:client_booking/view/booking/tabs/decision_maker.dart';
-import 'package:client_booking/view/booking/tabs/payee.dart';
-import 'package:client_booking/view/booking/tabs/plot_details.dart';
-import 'package:client_booking/view/booking/tabs/transaction.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/client_info.dart';
+import 'package:client_manager/view/booking/tabs/attach_documents.dart';
+import 'package:client_manager/view/booking/tabs/client_info_tab.dart';
+import 'package:client_manager/view/booking/tabs/decision_maker.dart';
+import 'package:client_manager/view/booking/tabs/payee.dart';
+import 'package:client_manager/view/booking/tabs/plot_details.dart';
+import 'package:client_manager/view/booking/tabs/transaction.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/client_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

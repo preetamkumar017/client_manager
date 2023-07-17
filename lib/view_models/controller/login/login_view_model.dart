@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:client_booking/models/login/user_model.dart';
-import 'package:client_booking/repository/login_repository/login_repository.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/utils/utils.dart';
-import 'package:client_booking/view_models/controller/user_preference/user_prefrence_view_model.dart';
+import 'package:client_manager/models/login/user_model.dart';
+import 'package:client_manager/repository/login_repository/login_repository.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/utils/utils.dart';
+import 'package:client_manager/view_models/controller/user_preference/user_prefrence_view_model.dart';
 
 class LoginViewModel extends GetxController {
 

@@ -1,10 +1,10 @@
-import 'package:client_booking/models/booking_model/client_data_calc_model.dart';
-import 'package:client_booking/res/components/general_exception.dart';
-import 'package:client_booking/res/components/internet_exceptions_widget.dart';
-import 'package:client_booking/res/routes/routes_name.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
-import 'package:client_booking/view_models/controller/booking/booking_form/import_controller.dart';
+import 'package:client_manager/models/booking_model/client_data_calc_model.dart';
+import 'package:client_manager/res/components/general_exception.dart';
+import 'package:client_manager/res/components/internet_exceptions_widget.dart';
+import 'package:client_manager/res/routes/routes_name.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/booking/booking_form/import_controller.dart';
 import 'package:get/get.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';

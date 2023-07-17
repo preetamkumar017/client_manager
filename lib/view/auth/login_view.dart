@@ -1,6 +1,6 @@
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
-import 'package:client_booking/view_models/controller/login/login_controller.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/login/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

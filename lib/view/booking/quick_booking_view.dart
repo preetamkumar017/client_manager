@@ -1,11 +1,11 @@
-import 'package:client_booking/view/flutter_flow/flutter_flow_radio_button.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_theme.dart';
-import 'package:client_booking/view/flutter_flow/flutter_flow_widgets.dart';
-import 'package:client_booking/view_models/controller/booking/quick_booking_controller.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_radio_button.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/booking/quick_booking_controller.dart';
 import 'package:get/get.dart';
 import 'package:styled_divider/styled_divider.dart';
 import 'package:flutter/material.dart';
-import 'package:client_booking/models/booking_model/client_data_calc_model.dart';
+import 'package:client_manager/models/booking_model/client_data_calc_model.dart';
 
 class QuickBookingView extends StatefulWidget {
   const QuickBookingView({Key? key}) : super(key: key);

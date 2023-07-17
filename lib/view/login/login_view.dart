@@ -1,7 +1,7 @@
-import 'package:client_booking/view/login/widgets/input_email_widget.dart';
-import 'package:client_booking/view/login/widgets/input_password_widget.dart';
-import 'package:client_booking/view/login/widgets/login_button_widget.dart';
-import 'package:client_booking/view_models/controller/login/login_view_model.dart';
+import 'package:client_manager/view/login/widgets/input_email_widget.dart';
+import 'package:client_manager/view/login/widgets/input_password_widget.dart';
+import 'package:client_manager/view/login/widgets/login_button_widget.dart';
+import 'package:client_manager/view_models/controller/login/login_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

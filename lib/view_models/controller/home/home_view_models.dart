@@ -1,8 +1,8 @@
 
 import 'package:get/get.dart';
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/home/user_list_model.dart';
-import 'package:client_booking/repository/home_repository/hone_repository.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/home/user_list_model.dart';
+import 'package:client_manager/repository/home_repository/hone_repository.dart';
 
 class HomeController extends GetxController {
 

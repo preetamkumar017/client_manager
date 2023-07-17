@@ -1,7 +1,7 @@
 import 'dart:developer';
-import 'package:client_booking/data/response/status.dart';
-import 'package:client_booking/models/booking_model/booking_list_model.dart';
-import 'package:client_booking/repository/booking_repository/booking_list_repository.dart';
+import 'package:client_manager/data/response/status.dart';
+import 'package:client_manager/models/booking_model/booking_list_model.dart';
+import 'package:client_manager/repository/booking_repository/booking_list_repository.dart';
 import 'package:get/get.dart';
 
 class BookingListController extends GetxController
