@@ -21,15 +21,11 @@ class CommitmentController extends GetxController
   final agreementPeriod = TextEditingController().obs ;
   final completionPeriod = TextEditingController().obs ;
   final workOnSite = TextEditingController().obs ;
-  final sba = TextEditingController().obs ;
-  final projectEstimate = TextEditingController().obs ;
 
 
   final agreementPeriodFocusNode = FocusNode().obs ;
   final workOnSiteFocusNode = FocusNode().obs ;
   final completionPeriodFocusNode = FocusNode().obs ;
-  final sbaFocusNode = FocusNode().obs ;
-  final projectEstimateFocusNode = FocusNode().obs ;
 
 
   @override
@@ -37,14 +33,10 @@ class CommitmentController extends GetxController
     agreementPeriod.value.dispose();
     completionPeriod.value.dispose();
     workOnSite.value.dispose();
-    sba.value.dispose();
-    projectEstimate.value.dispose();
 
     agreementPeriodFocusNode.value.dispose();
     workOnSiteFocusNode.value.dispose();
     completionPeriodFocusNode.value.dispose();
-    sbaFocusNode.value.dispose();
-    projectEstimateFocusNode.value.dispose();
     super.onClose();
   }
 
@@ -122,8 +114,6 @@ class CommitmentController extends GetxController
       'aggr_period':agreementPeriod.value.text,
       'comp_period':completionPeriod.value.text,
       'work_start_on':workOnSite.value.text,
-      'sba':sba.value.text,
-      'est_cost':projectEstimate.value.text,
       'create_by':login.read("id").toString(),
     };
     debugPrint(data.toString());
@@ -155,8 +145,6 @@ class CommitmentController extends GetxController
   agreementPeriod.value.text = "";
   completionPeriod.value.text = "";
   workOnSite.value.text = "";
-  sba.value.text = "";
-  projectEstimate.value.text = "";
   }
 
   void check()

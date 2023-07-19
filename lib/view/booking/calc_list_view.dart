@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 import 'package:client_manager/models/booking_model/client_data_calc_model.dart';
 import 'package:client_manager/res/components/general_exception.dart';
 import 'package:client_manager/res/components/internet_exceptions_widget.dart';
 import 'package:client_manager/res/routes/routes_name.dart';
 import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
+import 'package:client_manager/view_models/controller/booking/booking_details_controller.dart';
 import 'package:client_manager/view_models/controller/booking/booking_form/import_controller.dart';
 import 'package:get/get.dart';
 import 'package:styled_divider/styled_divider.dart';
@@ -22,6 +25,7 @@ class _CostListViewState extends State<CostListView> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final blc = Get.put(ImportController());
+  final bkc = Get.put(BookingDetailsController());
 
   @override
   void initState() {
@@ -215,7 +219,7 @@ class _CostListViewState extends State<CostListView> {
                           itemCount: blc.getCalcData.value.result!.length,
                           itemBuilder: (context, index) {
                             Result calcData = blc.getCalcData.value.result[index];
-                            debugPrint(calcData.createDate.toString());
+                            debugPrint(calcData.bookingId.toString());
                             return
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
@@ -491,7 +495,6 @@ class _CostListViewState extends State<CostListView> {
                                               const SizedBox(),
                                               FFButtonWidget(
                                                 onPressed: () {
-                                                  print('Button pressed ...');
                                                   // Map<String,String> screenData = {
                                                   //   "id":calcData.id ?? "",
                                                   //   "booking_id":calcData.bookingId ?? "",
@@ -499,9 +502,17 @@ class _CostListViewState extends State<CostListView> {
                                                   //   "mobile":calcData.clientMob ?? "",
                                                   //   "totalAmount":calcData.totalCost ?? "",
                                                   // };
-                                                   Get.toNamed(RouteName.quickBookingView,arguments: calcData);
-                                                },
-                                                text: 'Book Now',
+                                                  if(calcData.bookingId == null)
+                                                    {
+                                                      Get.toNamed(RouteName.quickBookingView,arguments: calcData);
+                                                    }else
+                                                      {
+                                                        log(calcData.bookingId.toString());
+                                                        // bkc.bookingDetailsApi(calcData.bookingId ?? "");
+                                                        // Get.toNamed(RouteName.bookingDetails);
+                                                      }
+                                                 },
+                                                text:  calcData.bookingId ==null ? 'Book Now' : 'Booked',
                                                 options: FFButtonOptions(
                                                   width: 80,
                                                   height: 25,

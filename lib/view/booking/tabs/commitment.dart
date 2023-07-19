@@ -34,8 +34,6 @@ class _AddCommitmentState extends State<AddCommitment> {
     commitController.agreementPeriod.value.text = "";
     commitController.completionPeriod.value.text =  "";
     commitController.workOnSite.value.text =  "";
-    commitController.sba.value.text ="";
-    commitController.projectEstimate.value.text = "";
   }
 
   @override
@@ -391,141 +389,15 @@ class _AddCommitmentState extends State<AddCommitment> {
                   ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            controller:commitController.workOnSite.value,
-                            focusNode: commitController.workOnSiteFocusNode.value,
-                            // autofocus: true,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: 'Work Start Date',
-                              labelStyle: FlutterFlowTheme.of(context).labelLarge,
-                              hintText: 'Enter Date',
-                              hintStyle: FlutterFlowTheme.of(context).bodySmall,
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).borderColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).borderColor,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              errorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              focusedErrorBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).error,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              suffixIcon: Icon(
-                                Icons.date_range,
-                                color: FlutterFlowTheme.of(context).iconbluecolour,
-                                size: 18,
-                              ),
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                            minLines: 1,
-                            keyboardType: TextInputType.none ,
-                            onTap: () async {
-                              DateTime? pickedDate = await showDatePicker(
-                                  context: context,
-                                  initialDate: DateTime.now(),
-                                  firstDate: DateTime(1950),
-                                  lastDate: DateTime(2030));
-
-                              if (pickedDate != null) {
-                                String formattedDate =
-                                DateFormat('dd-MM-yyyy')
-                                    .format(pickedDate);
-                              commitController.workOnSite.value.text = formattedDate;
-                              }
-
-                            },
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                            child: TextFormField(
-                              controller:commitController.sba.value,
-                              focusNode: commitController.sbaFocusNode.value,
-                              // autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'SBA',
-                                labelStyle: FlutterFlowTheme.of(context).labelLarge,
-                                hintText: 'Enter Super build up Area',
-                                hintStyle: FlutterFlowTheme.of(context).bodySmall,
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).borderColor,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).borderColor,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                              ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                              minLines: 1,
-                              keyboardType: TextInputType.number,
-                              // validator: _model.textController4Validator
-                              //     .asValidator(context),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
                     child: TextFormField(
-                      controller:commitController.projectEstimate.value,
-                      focusNode: commitController.projectEstimateFocusNode.value,
+                      controller:commitController.workOnSite.value,
+                      focusNode: commitController.workOnSiteFocusNode.value,
                       // autofocus: true,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Project Estimate Cost',
+                        labelText: 'Work Start Date',
                         labelStyle: FlutterFlowTheme.of(context).labelLarge,
-                        hintText: 'Enter Estimate Time',
+                        hintText: 'Enter Date',
                         hintStyle: FlutterFlowTheme.of(context).bodySmall,
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
@@ -555,13 +427,31 @@ class _AddCommitmentState extends State<AddCommitment> {
                           ),
                           borderRadius: BorderRadius.circular(5),
                         ),
+                        suffixIcon: Icon(
+                          Icons.date_range,
+                          color: FlutterFlowTheme.of(context).iconbluecolour,
+                          size: 18,
+                        ),
                         contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium,
                       minLines: 1,
-                      keyboardType: TextInputType.number,
-                      // validator:
-                      // _model.textController5Validator.asValidator(context),
+                      keyboardType: TextInputType.none ,
+                      onTap: () async {
+                        DateTime? pickedDate = await showDatePicker(
+                            context: context,
+                            initialDate: DateTime.now(),
+                            firstDate: DateTime(1950),
+                            lastDate: DateTime(2030));
+
+                        if (pickedDate != null) {
+                          String formattedDate =
+                          DateFormat('dd-MM-yyyy')
+                              .format(pickedDate);
+                        commitController.workOnSite.value.text = formattedDate;
+                        }
+
+                      },
                     ),
                   ),
                   Padding(
@@ -578,13 +468,7 @@ class _AddCommitmentState extends State<AddCommitment> {
                               }else if(commitController.workOnSite.value=="")
                                 {
                                   Utils.snackBar("Filed Missing", "Please Fill Work On Site ");
-                                }else if(commitController.sba.value=="")
-                                  {
-                                    Utils.snackBar("Filed Missing", "Please Fill SBA ");
-                                  }else if(commitController.projectEstimate.value=="")
-                                    {
-                                      Utils.snackBar("Filed Missing", "Please Fill Project Estimate ");
-                                    }else
+                                }else
                                       {
                                         commitController.submit();
                                       }

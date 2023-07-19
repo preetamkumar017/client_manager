@@ -25,7 +25,7 @@ class _QuickBookingViewState extends State<QuickBookingView> {
     qbController.clientName.value.text = _result.clientName ?? "";
     qbController.mobile.value.text = _result.clientMob ?? "";
     qbController.bid.value = _result.bookingId ?? "";
-    qbController.calcId.value = _result.bookingId ?? "";
+    qbController.calcId.value = _result.id ?? "";
 
     super.initState();
   }

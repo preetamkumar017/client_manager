@@ -346,7 +346,7 @@ class TransactionDetailsView extends StatelessWidget {
                                       style: TextStyle(),
                                     ),
                                     TextSpan(
-                                      text: ' (Not-Refundable)',
+                                      text: ' \n(Not-Refundable)',
                                       style: TextStyle(
                                         color:
                                         FlutterFlowTheme

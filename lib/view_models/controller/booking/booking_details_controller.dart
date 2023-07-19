@@ -23,7 +23,7 @@ class BookingDetailsController extends GetxController
 
 
   Future<void> bookingDetailsApi(String id)async {
-    // debugPrint("called");
+    debugPrint("called"+id);
      setRxRequestStatus(Status.LOADING);
 
     _api.bookingDetails(id).then((value){

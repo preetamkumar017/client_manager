@@ -38,8 +38,6 @@ class _CommitmentEditState extends State<CommitmentEdit> {
     commitController.agreementPeriod.value.text = myDateFormatMM(data.aggrPeriod ?? "");
     commitController.completionPeriod.value.text = myDateFormatMM(data.compPeriod ?? "");
     commitController.workOnSite.value.text = myDateFormatMM(data.workStartOn ?? "");
-    commitController.sba.value.text = data.sba ?? "";
-    commitController.projectEstimate.value.text = data.estCost ?? "";
   }
 
   @override
@@ -475,107 +473,7 @@ class _CommitmentEditState extends State<CommitmentEdit> {
                             },
                           ),
                         ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-                            child: TextFormField(
-                              controller:commitController.sba.value,
-                              focusNode: commitController.sbaFocusNode.value,
-                              autofocus: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'SBA',
-                                labelStyle: FlutterFlowTheme.of(context).labelLarge,
-                                hintText: 'Enter Super build up Area',
-                                hintStyle: FlutterFlowTheme.of(context).bodySmall,
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).borderColor,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).borderColor,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1,
-                                  ),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                              ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                              minLines: 1,
-                              keyboardType: TextInputType.number,
-                              // validator: _model.textController4Validator
-                              //     .asValidator(context),
-                            ),
-                          ),
-                        ),
                       ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
-                    child: TextFormField(
-                      controller:commitController.projectEstimate.value,
-                      focusNode: commitController.projectEstimateFocusNode.value,
-                      autofocus: true,
-                      obscureText: false,
-                      decoration: InputDecoration(
-                        labelText: 'Project Estimate Cost',
-                        labelStyle: FlutterFlowTheme.of(context).labelLarge,
-                        hintText: 'Enter Estimate Time',
-                        hintStyle: FlutterFlowTheme.of(context).bodySmall,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).borderColor,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).borderColor,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: FlutterFlowTheme.of(context).error,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
-                      ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
-                      minLines: 1,
-                      keyboardType: TextInputType.number,
-                      // validator:
-                      // _model.textController5Validator.asValidator(context),
                     ),
                   ),
                   Padding(
@@ -592,12 +490,6 @@ class _CommitmentEditState extends State<CommitmentEdit> {
                         }else if(commitController.workOnSite.value=="")
                         {
                           Utils.snackBar("Filed Missing", "Please Fill Work On Site ");
-                        }else if(commitController.sba.value=="")
-                        {
-                          Utils.snackBar("Filed Missing", "Please Fill SBA ");
-                        }else if(commitController.projectEstimate.value=="")
-                        {
-                          Utils.snackBar("Filed Missing", "Please Fill Project Estimate ");
                         }else
                         {
                           commitController.submit();
