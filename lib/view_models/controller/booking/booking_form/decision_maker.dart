@@ -135,6 +135,7 @@ class DecisionMakerEditController extends GetxController
   RxBool dmSameAsClient = false.obs;
 
   RxBool loading = false.obs;
+  RxBool sameAsClientInfo = false.obs;
 
   void save()
   {

@@ -60,45 +60,51 @@ class QuickBookingController extends GetxController {
   void  submit()
   {
     setLoading(RxStatus.loading());
-    
-    var id = login.read("id");
-    Map<String,String> data = {
-      "login_id":id.toString(),
-      "bid":bid.value,
-      "calc_id":calcId.value,
-      "booking_amt":plan.value,
-      "client_name":clientName.value.text,
-      "mobile_no":mobile.value.text,
-      "email_id":email.value.text,
-      "pan_no":panCard.value.text,
-      "aadhar_no":aadhaarCard.value.text,
-      "booking_link":paymentLink.value.text,
-    };
-    log(data.toString());
-
-    _repo.quickBooking(data).then((value){
-      debugPrint(value.toJson().toString());
-      if(value.code == 200)
-        {
+    if (aadhaarCard.value.text == "") {
+      Utils.snackBar("Field not found", "Please enter Aadhaar Number");
+      } else if (!isValidAadhaar(aadhaarCard.value.text)) {
+      Utils.snackBar("Invalid Aadhaar Number", "Please enter a valid Aadhaar Number");
+    }else if (panCard.value.text == "") {
+      Utils.snackBar("Field not found", "Please enter PAN Number");
+    } else if (!isValidPAN(panCard.value.text.toUpperCase())) {
+      Utils.snackBar("Invalid PAN Number", "Please enter a valid PAN Number");
+    }
+    else{
+      var id = login.read("id");
+      Map<String, String> data = {
+        "login_id": id.toString(),
+        "bid": bid.value,
+        "calc_id": calcId.value,
+        "booking_amt": plan.value,
+        "client_name": clientName.value.text,
+        "mobile_no": mobile.value.text,
+        "email_id": email.value.text,
+        "pan_no": panCard.value.text,
+        "aadhar_no": aadhaarCard.value.text,
+        "booking_link": paymentLink.value.text,
+      };
+      log(data.toString());
+      _repo.quickBooking(data).then((value) {
+        debugPrint(value.toJson().toString());
+        Future.delayed(Duration(seconds: 2));
+        if (value.code == 200) {
           Utils.toastMessage("Booking Added Successfully");
           setBid(value.lastId.toString());
           afterBooking();
-        }else if(value.code == 202)
-          {
-            Utils.toastMessage("Booking Updated Successfully");
-            setBid(value.lastId.toString());
-            afterBooking();
-          }else
-            {
-              Utils.toastMessage("Something Wants Wrong");
-            }
-
-    }).onError((error, stackTrace) {
-      setLoading(RxStatus.error());
-      debugPrint(error.toString());
-    });
+        } else if (value.code == 202) {
+          Utils.toastMessage("Booking Updated Successfully");
+          setBid(value.lastId.toString());
+          afterBooking();
+        } else {
+          Utils.toastMessage("Something Wants Wrong");
+        }
+      }).onError((error, stackTrace) {
+        setLoading(RxStatus.error());
+        debugPrint(error.toString());
+      });
+    }
   }
-  afterBooking()
+  void afterBooking()
   {
     setLoading(RxStatus.success());
     if(book == Booking.payNow)
@@ -139,6 +145,22 @@ class QuickBookingController extends GetxController {
           Utils.toastMessage(error.toString());
         });
       }
+  }
+
+  bool isValidPAN(String panNumber) {
+    // Regular expression pattern for PAN number validation
+    RegExp panRegex = RegExp(r'^[A-Z]{5}[0-9]{4}[A-Z]{1}$');
+
+    // Check if the panNumber matches the pattern
+    return panRegex.hasMatch(panNumber);
+  }
+
+  bool isValidAadhaar(String aadhaarNumber) {
+    // Regular expression pattern for Aadhaar number validation
+    RegExp aadhaarRegex = RegExp(r'^\d{12}$');
+
+    // Check if the aadhaarNumber matches the pattern
+    return aadhaarRegex.hasMatch(aadhaarNumber);
   }
 
 }

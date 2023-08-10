@@ -132,6 +132,8 @@ class PayeeEditController extends GetxController
 
   RxBool loading = false.obs;
 
+  RxBool sameAsClientInfo = false.obs;
+
 
   void submit()
   {

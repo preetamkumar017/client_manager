@@ -69,8 +69,8 @@ class PayNowController extends GetxController
       if(value.code == 200)
       {
         Utils.toastMessage("Transaction Added Successfully");
-        Future.delayed(Duration(seconds: 1 )).then((value) {
-          Get.offNamed(RouteName.dashboardView);
+        Future.delayed(const Duration(seconds: 1 )).then((value) {
+          Get.offAllNamed(RouteName.dashboardView);
         });
       }else
       {

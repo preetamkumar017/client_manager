@@ -37,10 +37,10 @@ class NetworkApiServices extends BaseApiServices {
   @override
   Future<dynamic> postApi(var data , String url)async{
 
-    if (kDebugMode) {
-      debugPrint(url);
-      debugPrint(data.toString());
-    }
+
+      log(url);
+      log(data.toString());
+
 
     dynamic responseJson ;
     try {
@@ -48,7 +48,7 @@ class NetworkApiServices extends BaseApiServices {
         body: data
       ).timeout( const Duration(seconds: 10));
       responseJson  = returnResponse(response) ;
-      // debugPrint(responseJson);
+      log(responseJson.toString());
     }on SocketException {
       throw InternetException('');
     }on RequestTimeOut {

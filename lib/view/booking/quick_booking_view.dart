@@ -502,6 +502,8 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                                 validator:(value) {
                                                   if (value == "") {
                                                     return 'this filed is required';
+                                                  }else if (!qbController.isValidAadhaar(qbController.aadhaarCard.value.text.toUpperCase())) {
+                                                    return "Invalid Aadhaar Number";
                                                   }
                                                   return null;
                                                 },
@@ -597,6 +599,8 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                                 validator:(value) {
                                                   if (value == "") {
                                                     return 'this filed is required';
+                                                  }else if (!qbController.isValidPAN(qbController.panCard.value.text.toUpperCase())) {
+                                                    return "Invalid PAN Number";
                                                   }
                                                   return null;
                                                 },
@@ -755,7 +759,6 @@ class _QuickBookingViewState extends State<QuickBookingView> {
                                         ],
                                       ),
                                     )
-
                                   ],
                                 ),
                               ),
@@ -773,4 +776,5 @@ class _QuickBookingViewState extends State<QuickBookingView> {
       ),
     );
   }
+
 }

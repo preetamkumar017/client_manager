@@ -3,10 +3,7 @@
 class AppUrl {
 
   static const String baseUrl = 'https://reqres.in' ;
-
-
   static const String loginApi = '$baseUrl/api/login' ;
-
   static const String userListApi = 'https://webhook.site/3c05a17b-3c4e-4f07-96f6-c613b4df4d74' ;
 
   // static const String bookingFormUrl  = "https://www.ukcdesigner.in/client_manager/index.php/bookingApi";
@@ -16,8 +13,9 @@ class AppUrl {
   static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
   // static const String domain  = "https://www.ukcdesigner.in";
   // static const String bookingFormUrl  = "$domain/client_manager/index.php/bookingApi";
+
   static const String mailUrl  = "$domain/client_manager/index.php/Mail";
-  static const String bookingFormUrlForDownload  = "$domain/client_manager/index.php/welcome/client_manager_pdf/";
+  static const String bookingFormUrlForDownload  = "$domain/client_manager/index.php/booking/client_booking_pdf/";
 
   static const String login = '$bookingFormUrl/login' ;
   static const String ajaxClientInfoUrl  = "$bookingFormUrl/ajax_client_info";
@@ -39,8 +37,5 @@ class AppUrl {
   static const String quickBooking  = "$bookingFormUrl/ajax_quick_booking";
   static const String quickTransaction  = "$bookingFormUrl/ajax_quick_transaction";
   static const String sendMail  = "$mailUrl/send_booking_mail";
-
-
-
 
 }

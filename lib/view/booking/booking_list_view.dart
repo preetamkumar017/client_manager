@@ -1,6 +1,8 @@
 
 // ignore_for_file: deprecated_member_use_from_same_package, sort_child_properties_last
 
+import 'dart:developer';
+
 import 'package:client_manager/data/response/status.dart';
 import 'package:client_manager/res/app_url/app_url.dart';
 import 'package:client_manager/res/components/general_exception.dart';
@@ -470,6 +472,7 @@ class _BookingListViewState extends State<BookingListView> {
                                                       children: [
                                                         InkWell(
                                                           onTap: () {
+                                                            log(AppUrl.bookingFormUrlForDownload+booking.id!);
                                                             DownloadFile().openFile(AppUrl.bookingFormUrlForDownload+booking.id!,"${booking.clientName!}.pdf");
                                                           },
                                                           child: Material(

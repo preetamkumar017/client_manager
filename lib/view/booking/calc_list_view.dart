@@ -502,7 +502,7 @@ class _CostListViewState extends State<CostListView> {
                                                   //   "mobile":calcData.clientMob ?? "",
                                                   //   "totalAmount":calcData.totalCost ?? "",
                                                   // };
-                                                  if(calcData.bookingId == null)
+                                                  if(calcData.bookingId == "0" || calcData.bookingId == null)
                                                     {
                                                       Get.toNamed(RouteName.quickBookingView,arguments: calcData);
                                                     }else
@@ -512,7 +512,7 @@ class _CostListViewState extends State<CostListView> {
                                                         // Get.toNamed(RouteName.bookingDetails);
                                                       }
                                                  },
-                                                text:  calcData.bookingId ==null ? 'Book Now' : 'Booked',
+                                                text:  (calcData.bookingId == "0" || calcData.bookingId == null) ? 'Book Now' : 'Booked',
                                                 options: FFButtonOptions(
                                                   width: 80,
                                                   height: 25,

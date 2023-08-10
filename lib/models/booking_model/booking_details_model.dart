@@ -13,7 +13,7 @@ class BookingDetailsModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['status'] = status;
     data['code'] = code;
     if (result != null) {
@@ -59,7 +59,7 @@ class Result {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     if (clientInfo != null) {
       data['client_info'] = clientInfo!.toJson();
     }
@@ -86,6 +86,7 @@ class ClientInfo {
   String? id;
   String? bookingAmt;
   String? clientName;
+  String? calcId;
   String? spouseName;
   String? age;
   String? gender;
@@ -99,6 +100,7 @@ class ClientInfo {
   String? officeAddr;
   String? createBy;
   String? clientReview;
+  String? bookingFile;
   String? status;
   String? createDate;
   String? updateDate;
@@ -109,11 +111,21 @@ class ClientInfo {
   String? marketingVerifyDate;
   String? adminVerify;
   String? adminVerifyDate;
+  String? bookingTimer;
+  String? bookingVerifyTimer;
+  String? transVerify;
+  String? transVerifyDate;
+  String? transVerifyBy;
+  String? linkRequest;
+  String? bookingLink;
+  String? aggrementStatus;
+  String? aggrementDate;
 
   ClientInfo(
       {this.id,
         this.bookingAmt,
         this.clientName,
+        this.calcId,
         this.spouseName,
         this.age,
         this.gender,
@@ -127,6 +139,7 @@ class ClientInfo {
         this.officeAddr,
         this.createBy,
         this.clientReview,
+        this.bookingFile,
         this.status,
         this.createDate,
         this.updateDate,
@@ -136,12 +149,22 @@ class ClientInfo {
         this.marketingVerify,
         this.marketingVerifyDate,
         this.adminVerify,
-        this.adminVerifyDate});
+        this.adminVerifyDate,
+        this.bookingTimer,
+        this.bookingVerifyTimer,
+        this.transVerify,
+        this.transVerifyDate,
+        this.transVerifyBy,
+        this.linkRequest,
+        this.bookingLink,
+        this.aggrementStatus,
+        this.aggrementDate});
 
   ClientInfo.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     bookingAmt = json['booking_amt'];
     clientName = json['client_name'];
+    calcId = json['calc_id'];
     spouseName = json['spouse_name'];
     age = json['age'];
     gender = json['gender'];
@@ -155,6 +178,7 @@ class ClientInfo {
     officeAddr = json['office_addr'];
     createBy = json['create_by'];
     clientReview = json['client_review'];
+    bookingFile = json['booking_file'];
     status = json['status'];
     createDate = json['create_date'];
     updateDate = json['update_date'];
@@ -165,13 +189,23 @@ class ClientInfo {
     marketingVerifyDate = json['marketing_verify_date'];
     adminVerify = json['admin_verify'];
     adminVerifyDate = json['admin_verify_date'];
+    bookingTimer = json['booking_timer'];
+    bookingVerifyTimer = json['booking_verify_timer'];
+    transVerify = json['trans_verify'];
+    transVerifyDate = json['trans_verify_date'];
+    transVerifyBy = json['trans_verify_by'];
+    linkRequest = json['link_request'];
+    bookingLink = json['booking_link'];
+    aggrementStatus = json['aggrement_status'];
+    aggrementDate = json['aggrement_date'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = id;
     data['booking_amt'] = bookingAmt;
     data['client_name'] = clientName;
+    data['calc_id'] = calcId;
     data['spouse_name'] = spouseName;
     data['age'] = age;
     data['gender'] = gender;
@@ -185,6 +219,7 @@ class ClientInfo {
     data['office_addr'] = officeAddr;
     data['create_by'] = createBy;
     data['client_review'] = clientReview;
+    data['booking_file'] = bookingFile;
     data['status'] = status;
     data['create_date'] = createDate;
     data['update_date'] = updateDate;
@@ -195,6 +230,15 @@ class ClientInfo {
     data['marketing_verify_date'] = marketingVerifyDate;
     data['admin_verify'] = adminVerify;
     data['admin_verify_date'] = adminVerifyDate;
+    data['booking_timer'] = bookingTimer;
+    data['booking_verify_timer'] = bookingVerifyTimer;
+    data['trans_verify'] = transVerify;
+    data['trans_verify_date'] = transVerifyDate;
+    data['trans_verify_by'] = transVerifyBy;
+    data['link_request'] = linkRequest;
+    data['booking_link'] = bookingLink;
+    data['aggrement_status'] = aggrementStatus;
+    data['aggrement_date'] = aggrementDate;
     return data;
   }
 }
@@ -249,7 +293,7 @@ class DecMaker {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = id;
     data['booking_id'] = bookingId;
     data['d_name'] = dName;
@@ -318,7 +362,7 @@ class Payee {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = id;
     data['booking_id'] = bookingId;
     data['payee_name'] = payeeName;
@@ -357,6 +401,15 @@ class TransDetail {
   String? loanAmt;
   String? loanAccNo;
   String? bankName;
+  String? chkAccept;
+  String? paymentDate;
+  String? paymentVerifyDate;
+  String? paymentStatus;
+  String? paymentVerifyBy;
+  String? aggrementAmt;
+  String? aggrPaymentMode;
+  String? aggrTransId;
+  String? aggrPaymentDate;
   String? createBy;
   String? createDate;
   String? updateDate;
@@ -382,6 +435,15 @@ class TransDetail {
         this.loanAmt,
         this.loanAccNo,
         this.bankName,
+        this.chkAccept,
+        this.paymentDate,
+        this.paymentVerifyDate,
+        this.paymentStatus,
+        this.paymentVerifyBy,
+        this.aggrementAmt,
+        this.aggrPaymentMode,
+        this.aggrTransId,
+        this.aggrPaymentDate,
         this.createBy,
         this.createDate,
         this.updateDate,
@@ -407,6 +469,15 @@ class TransDetail {
     loanAmt = json['loan_amt'];
     loanAccNo = json['loan_acc_no'];
     bankName = json['bank_name'];
+    chkAccept = json['chk_accept'];
+    paymentDate = json['payment_date'];
+    paymentVerifyDate = json['payment_verify_date'];
+    paymentStatus = json['payment_status'];
+    paymentVerifyBy = json['payment_verify_by'];
+    aggrementAmt = json['aggrement_amt'];
+    aggrPaymentMode = json['aggr_payment_mode'];
+    aggrTransId = json['aggr_trans_id'];
+    aggrPaymentDate = json['aggr_payment_date'];
     createBy = json['create_by'];
     createDate = json['create_date'];
     updateDate = json['update_date'];
@@ -414,7 +485,7 @@ class TransDetail {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = id;
     data['booking_id'] = bookingId;
     data['offer_amt'] = offerAmt;
@@ -434,6 +505,15 @@ class TransDetail {
     data['loan_amt'] = loanAmt;
     data['loan_acc_no'] = loanAccNo;
     data['bank_name'] = bankName;
+    data['chk_accept'] = chkAccept;
+    data['payment_date'] = paymentDate;
+    data['payment_verify_date'] = paymentVerifyDate;
+    data['payment_status'] = paymentStatus;
+    data['payment_verify_by'] = paymentVerifyBy;
+    data['aggrement_amt'] = aggrementAmt;
+    data['aggr_payment_mode'] = aggrPaymentMode;
+    data['aggr_trans_id'] = aggrTransId;
+    data['aggr_payment_date'] = aggrPaymentDate;
     data['create_by'] = createBy;
     data['create_date'] = createDate;
     data['update_date'] = updateDate;
@@ -446,8 +526,12 @@ class PlotDetail {
   String? id;
   String? bookingId;
   String? plotLocation;
+  String? plotTahsil;
+  String? plotDistrict;
   String? plotNo;
   String? plotSize;
+  String? khasraNo;
+  String? phNo;
   String? plotFacing;
   String? numRoad;
   String? plotDepth;
@@ -460,8 +544,12 @@ class PlotDetail {
       {this.id,
         this.bookingId,
         this.plotLocation,
+        this.plotTahsil,
+        this.plotDistrict,
         this.plotNo,
         this.plotSize,
+        this.khasraNo,
+        this.phNo,
         this.plotFacing,
         this.numRoad,
         this.plotDepth,
@@ -474,8 +562,12 @@ class PlotDetail {
     id = json['id'];
     bookingId = json['booking_id'];
     plotLocation = json['plot_location'];
+    plotTahsil = json['plot_tahsil'];
+    plotDistrict = json['plot_district'];
     plotNo = json['plot_no'];
     plotSize = json['plot_size'];
+    khasraNo = json['khasra_no'];
+    phNo = json['ph_no'];
     plotFacing = json['plot_facing'];
     numRoad = json['num_road'];
     plotDepth = json['plot_depth'];
@@ -486,12 +578,16 @@ class PlotDetail {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = id;
     data['booking_id'] = bookingId;
     data['plot_location'] = plotLocation;
+    data['plot_tahsil'] = plotTahsil;
+    data['plot_district'] = plotDistrict;
     data['plot_no'] = plotNo;
     data['plot_size'] = plotSize;
+    data['khasra_no'] = khasraNo;
+    data['ph_no'] = phNo;
     data['plot_facing'] = plotFacing;
     data['num_road'] = numRoad;
     data['plot_depth'] = plotDepth;
@@ -586,7 +682,7 @@ class AttachDoc {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['id'] = id;
     data['booking_id'] = bookingId;
     data['chk_adhar_copy'] = chkAdharCopy;

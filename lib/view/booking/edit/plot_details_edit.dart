@@ -28,15 +28,15 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
     if(data!=null)
     {
       pdc.id.value = data!.id!;
-      pdc.location.value.text = data!.plotLocation!;
-      pdc.plotNumber.value.text = data!.plotNo!;
-      pdc.plotSize.value.text = data!.plotSize!;
-      pdc.depth.value.text = data!.plotDepth!;
+      pdc.location.value.text = data!.plotLocation ?? "";
+      pdc.plotNumber.value.text = data!.plotNo ?? "";
+      pdc.plotSize.value.text = data!.plotSize ?? "";
+      pdc.depth.value.text = data!.plotDepth ?? "";
 
-      pdc.plotFacing.value = data!.plotFacing!;
-      pdc.plotFacingList.value = [data!.plotFacing!];
+      pdc.plotFacing.value = data!.plotFacing ?? "";
+      pdc.plotFacingList.value = [data!.plotFacing ?? ""];
 
-      pdc.roads.value = data!.numRoad!;
+      pdc.roads.value = data!.numRoad ?? "";
       if(pdc.roads.value=="1")
         {
           pdc.roadsList.value = ["One"];
@@ -184,6 +184,132 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                             FlutterFlowTheme.of(context).bodyText1,
                                             maxLines: null,
                                           ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      10.0, 10.0, 10.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 5.0, 0.0),
+                                          child: TextFormField(
+                                            controller: pdc.tahsil.value,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: ' Tahsil',
+                                              labelStyle: FlutterFlowTheme.of(context)
+                                                  .bodyText1,
+                                              hintText: 'Enter Tahsil',
+                                              hintStyle: FlutterFlowTheme.of(context)
+                                                  .subtitle2,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(context)
+                                                      .borderColor,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                BorderRadius.circular(8.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(context)
+                                                      .borderColor,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                BorderRadius.circular(8.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                BorderRadius.circular(8.0),
+                                              ),
+                                              focusedErrorBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                BorderRadius.circular(8.0),
+                                              ),
+                                              filled: true,
+                                              fillColor: FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                              contentPadding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  20.0, 0.0, 0.0, 0.0),
+                                            ),
+                                            style:
+                                            FlutterFlowTheme.of(context).bodyText1,
+                                            maxLines: null,
+                                            keyboardType: TextInputType.text,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: TextFormField(
+                                          controller: pdc.district.value,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelText: 'District',
+                                            labelStyle:
+                                            FlutterFlowTheme.of(context).bodyText1,
+                                            hintText: 'Enter District',
+                                            hintStyle:
+                                            FlutterFlowTheme.of(context).subtitle2,
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .borderColor,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius: BorderRadius.circular(8.0),
+                                            ),
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .borderColor,
+                                                width: 1.0,
+                                              ),
+                                              borderRadius: BorderRadius.circular(8.0),
+                                            ),
+                                            errorBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius: BorderRadius.circular(8.0),
+                                            ),
+                                            focusedErrorBorder: OutlineInputBorder(
+                                              borderSide: const BorderSide(
+                                                color: Color(0x00000000),
+                                                width: 1.0,
+                                              ),
+                                              borderRadius: BorderRadius.circular(8.0),
+                                            ),
+                                            filled: true,
+                                            fillColor:
+                                            FlutterFlowTheme.of(context).alternate,
+                                            contentPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                20.0, 0.0, 0.0, 0.0),
+                                          ),
+                                          style: FlutterFlowTheme.of(context).bodyText1,
+                                          maxLines: null,
+                                          keyboardType: TextInputType.text,
                                         ),
                                       ),
                                     ],
@@ -614,12 +740,11 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                           height: MediaQuery.of(context).size.height *
                                               0.04,
                                           decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .buttonColor,
+                                            color: FlutterFlowTheme.of(context).buttonColor,
                                             borderRadius: BorderRadius.circular(10.0),
                                           ),
                                           child: Text(
-                                            'Attach Doc',
+                                            'Update',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(

@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:android_path_provider/android_path_provider.dart';
+import 'package:client_manager/res/components/pdf_viewer.dart';
 import 'package:client_manager/utils/utils.dart';
 import 'package:client_manager/view/booking/view_pdf.dart';
 import 'package:dio/dio.dart';
@@ -13,6 +14,7 @@ class DownloadFile extends GetxController
   Future openFile( String url, String? fileName) async {
     final file = await downloadFile(url, fileName!);
     if (file == null) return;
+    Get.to(PDFFileScreen(path: file.path,));
 
     log('Path: ${file.path}');
     Utils.toastMessage("Successfully downloaded to: ${file.path}");

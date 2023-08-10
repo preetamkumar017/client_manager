@@ -128,6 +128,70 @@ class _PayeeEditState extends State<PayeeEdit> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
+
+                                      Row(
+                                        children: [
+                                          Obx(() {
+                                            return Checkbox(
+                                              checkColor: Colors.white,
+                                              // fillColor: MaterialStateProperty.resolveWith(getColor),
+                                              value: pc.sameAsClientInfo.value,
+                                              onChanged: (bool? value) {
+                                                pc.sameAsClientInfo.value = value ?? false;
+                                                ClientInfo data = bkc.bookingDetails
+                                                    .value.result!.clientInfo ??
+                                                    ClientInfo();
+
+                                                if (value ?? false == true) {
+                                                  pc.clientName.value.text =
+                                                      data.clientName ?? "";
+                                                  pc.relation.value.text = "Self";
+                                                  pc.mobile.value.text =
+                                                      data.mobileNo ?? "";
+                                                  pc.email.value.text =
+                                                      data.emailId ?? "";
+                                                  pc.pan.value.text =
+                                                      data.panNo ?? "";
+                                                  pc.aadhaar.value.text =
+                                                      data.aadharNo ?? "";
+                                                  log(data.presentAddr ?? "");
+                                                  var add = jsonDecode(
+                                                      data.permanentAddr ??
+                                                          '{"p_hno":"","p_street":"","p_landmark":"","p_city":"","p_state":"","p_pincode":""}');
+
+                                                  pc.pyHouseNo.value.text =
+                                                      add['p_hno'] ?? "";
+                                                  pc.pyColony.value.text =
+                                                      add['p_street'] ?? "";
+                                                  pc.pyLandmark.value.text =
+                                                      add['p_landmark'] ?? "";
+                                                  pc.pyCity.value.text =
+                                                      add['p_city'] ?? "";
+                                                  pc.pyState.value.text =
+                                                      add['p_state'] ?? "";
+                                                  pc.pyPin.value.text =
+                                                      add['p_pincode'] ?? "";
+                                                }
+                                                else {
+                                                  pc.clientName.value.text = "";
+                                                  pc.relation.value.text = "";
+                                                  pc.mobile.value.text = "";
+                                                  pc.email.value.text = "";
+                                                  pc.pan.value.text = "";
+                                                  pc.aadhaar.value.text = "";
+                                                  pc.pyHouseNo.value.text = "";
+                                                  pc.pyColony.value.text = "";
+                                                  pc.pyLandmark.value.text = "";
+                                                  pc.pyCity.value.text = "";
+                                                  pc.pyState.value.text = "";
+                                                  pc.pyPin.value.text = "";
+                                                }
+                                              },
+                                            );
+                                          }),
+                                          const Text("Same As Client Info")
+                                        ],
+                                      ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(10.0, 15.0,

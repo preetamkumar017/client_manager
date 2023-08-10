@@ -158,7 +158,6 @@ class _AttachDocumentsState extends State<AttachDocuments> {
 
                                 elevation: 1.0,
                                 backgroundColor:Colors.white,
-
                                 labelStyle: adc.pan.value ? FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(

@@ -17,6 +17,8 @@ class PlotDetailsController extends GetxController
 
   final location      = TextEditingController().obs ;
   final plotNumber      = TextEditingController().obs ;
+  final tahsil      = TextEditingController().obs ;
+  final district      = TextEditingController().obs ;
   final plotSize      = TextEditingController().obs ;
   final depth      = TextEditingController().obs ;
 
@@ -35,6 +37,8 @@ class PlotDetailsController extends GetxController
       nextPage.value = true;
       Map data = {
         "booking_id": clintInfo.lastId.value,
+        "plot_tahsil": tahsil.value.text,
+        "plot_district": district.value.text,
         "plot_location": location.value.text,
         "plot_no": plotNumber.value.text,
         "plot_size": plotSize.value.text,
@@ -68,6 +72,8 @@ class PlotDetailsEditController extends GetxController
 
 
   final location      = TextEditingController().obs ;
+  final tahsil      = TextEditingController().obs ;
+  final district      = TextEditingController().obs ;
   final plotNumber      = TextEditingController().obs ;
   final plotSize      = TextEditingController().obs ;
   final depth      = TextEditingController().obs ;
@@ -90,6 +96,8 @@ class PlotDetailsEditController extends GetxController
         "booking_id": bookingId.value,
         "id": id.value,
         "plot_location": location.value.text,
+        "plot_tahsil": tahsil.value.text,
+        "plot_district": district.value.text,
         "plot_no": plotNumber.value.text,
         "plot_size": plotSize.value.text,
         "plot_facing": plotFacing.value,

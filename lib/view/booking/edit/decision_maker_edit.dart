@@ -1,4 +1,6 @@
-import 'dart:convert';import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
+import 'dart:convert';
+import 'dart:developer';
+import 'package:client_manager/view/flutter_flow/flutter_flow_theme.dart';
 import 'package:client_manager/view/flutter_flow/flutter_flow_widgets.dart';
 import 'package:client_manager/view_models/controller/booking/booking_details_controller.dart';
 import 'package:client_manager/view_models/controller/booking/booking_form/decision_maker.dart';
@@ -7,7 +9,7 @@ import 'package:get/get.dart';
 import 'package:client_manager/models/booking_model/booking_details_model.dart';
 
 class DecisionMakerEdit extends StatefulWidget {
-   const DecisionMakerEdit({Key? key}) : super(key: key);
+  const DecisionMakerEdit({Key? key}) : super(key: key);
 
   @override
   State<DecisionMakerEdit> createState() => _DecisionMakerEditState();
@@ -17,7 +19,7 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
   final dm = Get.put(DecisionMakerEditController());
   final bkc = Get.put(BookingDetailsController());
 
-  late DecMaker? data ;
+  late DecMaker? data;
 
   @override
   void initState() {
@@ -26,11 +28,9 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
   }
 
   assignData() {
-
     data = bkc.bookingDetails.value.result!.decMaker;
     dm.bookingId.value = bkc.bookingDetails.value.result!.clientInfo!.id!;
-    if(data!=null)
-    {
+    if (data != null) {
       var add = jsonDecode(data!.dAddr!);
       //debugPrint(add.toString());
       dm.id.value = data!.id!;
@@ -65,14 +65,16 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
             child: Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.only(left: 10,bottom: 20,top: 10),
+                  margin: const EdgeInsets.only(left: 10, bottom: 20, top: 10),
                   child: Stack(
-                    children:[
+                    children: [
 
-                      IconButton(onPressed: (){
+                      IconButton(onPressed: () {
                         Get.back();
-                      }, icon:  Icon(Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).iconColor)),
+                      }, icon: Icon(Icons.arrow_back_rounded,
+                          color: FlutterFlowTheme
+                              .of(context)
+                              .iconColor)),
                       Padding(
                         padding:
                         const EdgeInsetsDirectional.fromSTEB(
@@ -91,7 +93,8 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
                             ),
                           ],
                         ),
-                      )],
+                      )
+                    ],
                   ),
                 ),
                 Padding(
@@ -125,6 +128,68 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
+                                  Row(
+                                    children: [
+                                      Obx(() {
+                                        return Checkbox(
+                                          checkColor: Colors.white,
+                                          // fillColor: MaterialStateProperty.resolveWith(getColor),
+                                          value: dm.sameAsClientInfo.value,
+                                          onChanged: (bool? value) {
+                                            dm.sameAsClientInfo.value = value ?? false;
+                                            ClientInfo data = bkc.bookingDetails
+                                                .value.result!.clientInfo ??
+                                                ClientInfo();
+
+                                            if (value ?? false == true) {
+                                              dm.clientName.value.text =
+                                                  data.clientName ?? "";
+                                              dm.relation.value.text = "Self";
+                                              dm.mobile.value.text =
+                                                  data.mobileNo ?? "";
+                                              dm.email.value.text =
+                                                  data.emailId ?? "";
+                                              dm.pan.value.text =
+                                                  data.panNo ?? "";
+                                              dm.aadhaar.value.text =
+                                                  data.aadharNo ?? "";
+                                              var add = jsonDecode(
+                                                  data.permanentAddr ??
+                                                      '{"p_hno":"","p_street":"","p_landmark":"","p_city":"","p_state":"","p_pincode":""}');
+
+                                              dm.dMHouseNo.value.text =
+                                                  add['p_hno'] ?? "";
+                                              dm.dMColony.value.text =
+                                                  add['p_street'] ?? "";
+                                              dm.dMLandmark.value.text =
+                                                  add['p_landmark'] ?? "";
+                                              dm.dMCity.value.text =
+                                                  add['p_city'] ?? "";
+                                              dm.dMState.value.text =
+                                                  add['p_state'] ?? "";
+                                              dm.dMPin.value.text =
+                                                  add['p_pincode'] ?? "";
+                                            }
+                                            else {
+                                              dm.clientName.value.text = "";
+                                              dm.relation.value.text = "";
+                                              dm.mobile.value.text = "";
+                                              dm.email.value.text = "";
+                                              dm.pan.value.text = "";
+                                              dm.aadhaar.value.text = "";
+                                              dm.dMHouseNo.value.text = "";
+                                              dm.dMColony.value.text = "";
+                                              dm.dMLandmark.value.text = "";
+                                              dm.dMCity.value.text = "";
+                                              dm.dMState.value.text = "";
+                                              dm.dMPin.value.text = "";
+                                            }
+                                          },
+                                        );
+                                      }),
+                                      const Text("Same As Client Info")
+                                    ],
+                                  ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional
                                         .fromSTEB(10.0, 15.0,
@@ -456,7 +521,8 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
                                           child: TextFormField(
                                             controller: dm.email.value,
                                             obscureText: false,
-                                            keyboardType:TextInputType.emailAddress,
+                                            keyboardType: TextInputType
+                                                .emailAddress,
                                             decoration:
                                             InputDecoration(
                                               labelText:
@@ -1400,7 +1466,8 @@ class _DecisionMakerEditState extends State<DecisionMakerEdit> {
                                     ),
                                   ),
                                   Container(
-                                    margin: const EdgeInsets.symmetric(vertical: 20),
+                                    margin: const EdgeInsets.symmetric(
+                                        vertical: 20),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional
                                           .fromSTEB(

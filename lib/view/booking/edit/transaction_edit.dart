@@ -28,24 +28,24 @@ class _TransactionEditState extends State<TransactionEdit> {
     tc.bookingId.value = bkc.bookingDetails.value.result!.clientInfo!.id!;
 
     if (data != null) {
-      tc.id.value = data!.id!;
-      tc.anyOffer.value.text = data!.offerAmt!;
-      tc.quotationTypeList.value = [data!.quotationType!];
-      tc.discountRate.value.text = data!.finalRate!;
-      tc.amount.value.text = data!.finalAmt!;
-      tc.inWords.value.text = data!.finalAmtInWord!;
-      tc.nonRefundable.value.text = data!.paidBookingAmt!;
+      tc.id.value = data!.id ?? "";
+      tc.anyOffer.value.text = data!.offerAmt ?? "";
+      tc.quotationTypeList.value = [data!.quotationType ?? ""];
+      tc.discountRate.value.text = data!.finalRate ?? "";
+      tc.amount.value.text = data!.finalAmt ?? "";
+      tc.inWords.value.text = data!.finalAmtInWord ?? "";
+      tc.nonRefundable.value.text = data!.paidBookingAmt ?? "";
       // tc.upi.value.text = data!.upiId!;
-      tc.paymentLink.value.text = data!.paymentLink!;
+      tc.paymentLink.value.text = data!.paymentLink ?? "";
       // tc.chequeNo.value.text = data!.chequeNo!;
       // tc.chequeDate.value.text = data!.chequeData!;
-      tc.selfAmount.value.text = data!.selfAmt!;
-      tc.bankName.value.text = data!.bankName!;
-      tc.loanAmount.value.text = data!.loanAmt!;
-      tc.loanAccount.value.text = data!.loanAccNo!;
+      tc.selfAmount.value.text = data!.selfAmt ?? "";
+      tc.bankName.value.text = data!.bankName ?? "";
+      tc.loanAmount.value.text = data!.loanAmt ?? "";
+      tc.loanAccount.value.text = data!.loanAccNo ?? "";
 
       tc.paymentMode.value = data!.paymentMode!.replaceAll('_', '/');
-      tc.paymentModeList.value = [data!.paymentMode!];
+      tc.paymentModeList.value = [data!.paymentMode ?? ""];
       if (tc.paymentMode.value == "UPI") {
         tc.isUpi.value = true;
       } else if (tc.paymentMode.value == "NEFT/RTGS/IMPS") {
@@ -56,14 +56,14 @@ class _TransactionEditState extends State<TransactionEdit> {
         tc.isCheque.value = true;
       }
 
-      tc.fundingModeList.value = [data!.fundingMode!];
-      tc.fundingMode.value = data!.fundingMode!;
+      tc.fundingModeList.value = [data!.fundingMode ?? ""];
+      tc.fundingMode.value = data!.fundingMode ?? "";
 
 
 
-      tc.quotationTypeList.value = [data!.quotationType!];
-      tc.fundingMode.value = data!.fundingMode!;
-      tc.quotationRate.value  = data!.quotationType!;
+      tc.quotationTypeList.value = [data!.quotationType ?? ""];
+      tc.fundingMode.value = data!.fundingMode ?? "";
+      tc.quotationRate.value  = data!.quotationType ?? "";
     }
   }
 
