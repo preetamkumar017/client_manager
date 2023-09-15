@@ -52,14 +52,14 @@ class QuickBookingController extends GetxController {
   setCalcId(String data)=> calcId.value = data;
 
   Rx<Booking> book = Booking.payNow.obs;
-  RxStatus loading = RxStatus.empty(); 
-  get getLoading => loading;
-  setLoading(RxStatus data)=> loading=data;
+  RxBool loading = false.obs;
+  get getLoading => loading.value;
+  setLoading(bool data)=> loading.value=data;
   
 
   void  submit()
   {
-    setLoading(RxStatus.loading());
+    setLoading(true);
     if (aadhaarCard.value.text == "") {
       Utils.snackBar("Field not found", "Please enter Aadhaar Number");
       } else if (!isValidAadhaar(aadhaarCard.value.text)) {
@@ -99,14 +99,13 @@ class QuickBookingController extends GetxController {
           Utils.toastMessage("Something Wants Wrong");
         }
       }).onError((error, stackTrace) {
-        setLoading(RxStatus.error());
+        setLoading(false);
         debugPrint(error.toString());
       });
     }
   }
   void afterBooking()
   {
-    setLoading(RxStatus.success());
     if(book == Booking.payNow)
     {
       Utils.toastMessage("pay now");
@@ -141,7 +140,12 @@ class QuickBookingController extends GetxController {
               {
                 Utils.toastMessage("Mail Failure");
               }
+
+          setLoading(false);
         }).onError((error, stackTrace) {
+          log(error.toString());
+
+          setLoading(false);
           Utils.toastMessage(error.toString());
         });
       }

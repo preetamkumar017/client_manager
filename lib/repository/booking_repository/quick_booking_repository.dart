@@ -33,7 +33,6 @@ class QuickBookingRepository
   Future<ResultModel> sendMail(var data) async{
     try {
       dynamic response = await _apiService.postApi(data, AppUrl.sendMail);
-      debugPrint(response.toString());
       return response = ResultModel.fromJson(response);
     }catch(e)
     {

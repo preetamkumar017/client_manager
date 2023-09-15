@@ -1,3 +1,4 @@
+import 'package:client_manager/view/agreement/agreement_list_view.dart';
 import 'package:client_manager/view/auth/pre_login_view.dart';
 import 'package:client_manager/view/booking/booking_details_view/full_booking_details_view.dart';
 import 'package:client_manager/view/booking/booking_form_view.dart';
@@ -151,6 +152,12 @@ class AppRoutes {
     GetPage(
       name: RouteName.payNowView,
       page: () => const PayNowView() ,
+      transitionDuration: const Duration(milliseconds: 250),
+      transition: Transition.leftToRightWithFade ,
+    ) ,
+    GetPage(
+      name: RouteName.agreementListView,
+      page: () => const AgreementListView() ,
       transitionDuration: const Duration(milliseconds: 250),
       transition: Transition.leftToRightWithFade ,
     ) ,

@@ -1,6 +1,4 @@
 import 'dart:developer';
-
-import 'package:app_tutorial/app_tutorial.dart';
 import 'package:client_manager/data/response/status.dart';
 import 'package:client_manager/res/components/general_exception.dart';
 import 'package:client_manager/res/components/internet_exceptions_widget.dart';
@@ -382,6 +380,7 @@ class _DashboardViewState extends State<DashboardView> {
                       dashboardTour.write("tour", false);
                     }
                   BookingDetails? dashData =  dash.dashboardDetails.value.bookingDetails;
+                  AgreementDetails? agrData =  dash.dashboardDetails.value.agreementDetails;
                   return Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -617,7 +616,7 @@ class _DashboardViewState extends State<DashboardView> {
                                       alignment:
                                           const AlignmentDirectional(0, 0),
                                       child: Text(
-                                        '75',
+                                        agrData!.totalRowCount ?? "",
                                         style: FlutterFlowTheme.of(context)
                                             .headlineSmall
                                             .override(
@@ -629,40 +628,45 @@ class _DashboardViewState extends State<DashboardView> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 0, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Your Total Agreement ',
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .white,
-                                              ),
-                                        ),
-                                        Text(
-                                          'Click here to see the total Agreement.',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .white,
-                                              ),
-                                        ),
-                                      ],
+                                  InkWell(
+                                    onTap: () {
+                                      Get.toNamed(RouteName.agreementListView);
+                                    },
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Your Total Agreement ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color:
+                                                      FlutterFlowTheme.of(context)
+                                                          .white,
+                                                ),
+                                          ),
+                                          Text(
+                                            'Click here to see the total Agreement.',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color:
+                                                      FlutterFlowTheme.of(context)
+                                                          .white,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -780,7 +784,7 @@ class _DashboardViewState extends State<DashboardView> {
                                       Container(
                                         key: agreementAmount,
                                         child: Text(
-                                          'Rs. 3,00,000',
+                                          "Rs. ${agrData!.totalAggrementAmt ?? "0.00"}",
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
@@ -915,87 +919,92 @@ class _DashboardViewState extends State<DashboardView> {
                         child: Padding(
                           padding:
                               const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color:
-                                  FlutterFlowTheme.of(context).whitecontainer,
-                              boxShadow: [
-                                BoxShadow(
-                                  blurRadius: 4,
-                                  color: FlutterFlowTheme.of(context)
-                                      .boxShadowcolour,
-                                  offset: const Offset(0, 5),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  30, 0, 0, 0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    key: newAgreement,
-                                    width: 60,
-                                    height: 60,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .iconcontainerdashboard,
-                                      borderRadius: BorderRadius.circular(10),
-                                      shape: BoxShape.rectangle,
-                                    ),
-                                    child: Align(
-                                      alignment:
-                                          const AlignmentDirectional(0, 0),
-                                      child: Image.asset(
-                                        'assets/images/agreement.png',
-                                        width: 30,
-                                        height: 30,
-                                        fit: BoxFit.cover,
+                          child: InkWell(
+                            onTap: () {
+                              Get.toNamed(RouteName.agreementListView);
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                color:
+                                    FlutterFlowTheme.of(context).whitecontainer,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 4,
+                                    color: FlutterFlowTheme.of(context)
+                                        .boxShadowcolour,
+                                    offset: const Offset(0, 5),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    30, 0, 0, 0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      key: newAgreement,
+                                      width: 60,
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .iconcontainerdashboard,
+                                        borderRadius: BorderRadius.circular(10),
+                                        shape: BoxShape.rectangle,
+                                      ),
+                                      child: Align(
+                                        alignment:
+                                            const AlignmentDirectional(0, 0),
+                                        child: Image.asset(
+                                          'assets/images/agreement.png',
+                                          width: 30,
+                                          height: 30,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 0, 0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Make an Agreement',
-                                          style: FlutterFlowTheme.of(context)
-                                              .titleMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .borderColor,
-                                              ),
-                                        ),
-                                        Text(
-                                          'Click here to make an agreement.',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                        ),
-                                      ],
+                                    Padding(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              15, 0, 0, 0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Make an Agreement',
+                                            style: FlutterFlowTheme.of(context)
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color:
+                                                      FlutterFlowTheme.of(context)
+                                                          .borderColor,
+                                                ),
+                                          ),
+                                          Text(
+                                            'Click here to make an agreement.',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color:
+                                                      FlutterFlowTheme.of(context)
+                                                          .primaryText,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

@@ -77,6 +77,7 @@ abstract class FlutterFlowTheme {
   late Color iconcontainerdashboard;
   late Color loginPageColour;
   late Color primaryBtnText;
+  late Color greencontainer;
 
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
@@ -189,6 +190,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color iconcontainerdashboard = Color(0xFFEEEEEE);
   late Color loginPageColour = Color(0xFF49ACF3);
   late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color greencontainer = Color(0xFFE9F8F2);
 }
 
 abstract class Typography {
@@ -240,7 +242,7 @@ class ThemeTypography extends Typography {
   TextStyle get displayMedium => GoogleFonts.getFont(
     'Poppins',
     color: theme.iconeditcolour,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     fontSize: 15.0,
   );
   String get displaySmallFamily => 'Poppins';
@@ -313,9 +315,10 @@ class ThemeTypography extends Typography {
     fontWeight: FontWeight.w500,
     fontSize: 11.0,
   );
-  String get bodyLargeFamily => 'Roboto';
+  String get bodyLargeFamily => 'Poppins';
   TextStyle get bodyLarge => GoogleFonts.getFont(
-    'Roboto',
+    'Poppins',
+    color: theme.white,
     fontSize: 14.0,
   );
   String get bodyMediumFamily => 'Poppins';
@@ -382,6 +385,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color iconcontainerdashboard = Color(0xFFFFFFFF);
   late Color loginPageColour = Color(0xFF3F6791);
   late Color primaryBtnText = Color(0xFFFFFFFF);
+  late Color greencontainer = Color(0xFF7372B4);
 }
 
 extension TextStyleHelper on TextStyle {

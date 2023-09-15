@@ -9,13 +9,14 @@ class AppUrl {
   // static const String bookingFormUrl  = "https://www.ukcdesigner.in/client_manager/index.php/bookingApi";
   // static const String bookingFormUrlForDownload  = "https://www.ukcdesigner.in/client_manager/index.php/welcome/";
 
-  static const String domain  = "http://192.168.1.4";
-  static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
-  // static const String domain  = "https://www.ukcdesigner.in";
-  // static const String bookingFormUrl  = "$domain/client_manager/index.php/bookingApi";
+  // static const String domain  = "http://192.168.1.4";
+  // static const String bookingFormUrl  = "$domain/cost_calc/index.php/bookingApi";
+  static const String domain  = "https://www.ukcdesigner.in";
+  static const String bookingFormUrl  = "$domain/client_manager/index.php/bookingApi";
 
   static const String mailUrl  = "$domain/client_manager/index.php/Mail";
-  static const String bookingFormUrlForDownload  = "$domain/client_manager/index.php/booking/client_booking_pdf/";
+  // static const String bookingFormUrlForDownload  = "$domain/client_manager/index.php/booking/client_booking_pdf/";
+  static const String bookingFormUrlForDownload  = "$bookingFormUrl/client_booking_pdf/";
 
   static const String login = '$bookingFormUrl/login' ;
   static const String ajaxClientInfoUrl  = "$bookingFormUrl/ajax_client_info";
@@ -33,9 +34,11 @@ class AppUrl {
   static const String profile  = "$bookingFormUrl/profile";
   static const String deleteBooking  = "$bookingFormUrl/ajax_truncate";
   static const String dataFromCalc  = "$bookingFormUrl/ajax_client_data";
+  static const String anubadhAgreementList  = "$bookingFormUrl/anubadh_agreement_list";
+  static const String anubandhPdf  = "$bookingFormUrl/anubandh_pdf";
 
   static const String quickBooking  = "$bookingFormUrl/ajax_quick_booking";
   static const String quickTransaction  = "$bookingFormUrl/ajax_quick_transaction";
-  static const String sendMail  = "$mailUrl/send_booking_mail";
+  static const String sendMail  = "$mailUrl/send_quick_booking_mail_api";
 
 }

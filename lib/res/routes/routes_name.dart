@@ -26,6 +26,7 @@ class RouteName {
 
   static const String commitment = '/commitment' ;
   static const String commitmentEdit = '/commitment_edit' ;
+  static const String agreementListView = '/agreementListView' ;
 
 
 }

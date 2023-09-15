@@ -17,7 +17,7 @@ class PlotDetailsEdit extends StatefulWidget {
 class _PlotDetailsEditState extends State<PlotDetailsEdit> {
   final pdc = Get.put(PlotDetailsEditController());
   final bkc = Get.put(BookingDetailsController());
-  late PlotDetail? data ;
+  late PlotDetail? data;
   @override
   void initState() {
     super.initState();
@@ -25,8 +25,7 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
     data = bkc.bookingDetails.value.result!.plotDetail;
     pdc.bookingId.value = bkc.bookingDetails.value.result!.clientInfo!.id!;
 
-    if(data!=null)
-    {
+    if (data != null) {
       pdc.id.value = data!.id!;
       pdc.location.value.text = data!.plotLocation ?? "";
       pdc.plotNumber.value.text = data!.plotNo ?? "";
@@ -37,20 +36,14 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
       pdc.plotFacingList.value = [data!.plotFacing ?? ""];
 
       pdc.roads.value = data!.numRoad ?? "";
-      if(pdc.roads.value=="1")
-        {
-          pdc.roadsList.value = ["One"];
-        }else if(pdc.roads.value=="2")
-          {
-            pdc.roadsList.value = ["Two"];
-          }else
-            {
-              pdc.roadsList.value = ["Three"];
-            }
-
-
+      if (pdc.roads.value == "1") {
+        pdc.roadsList.value = ["One"];
+      } else if (pdc.roads.value == "2") {
+        pdc.roadsList.value = ["Two"];
+      } else {
+        pdc.roadsList.value = ["Three"];
+      }
     }
-
   }
 
   @override
@@ -63,39 +56,36 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
           ),
           child: ListView(
             children: [
-
               Container(
-                margin: const EdgeInsets.only(left: 10,bottom: 20,top: 10),
+                margin: const EdgeInsets.only(left: 10, bottom: 20, top: 10),
                 child: Stack(
-                  children:[
-
-                    IconButton(onPressed: (){
-                      Get.back();
-                    }, icon:  Icon(Icons.arrow_back_rounded,
-            color: FlutterFlowTheme.of(context).iconColor)),
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          Get.back();
+                        },
+                        icon: Icon(Icons.arrow_back_rounded,
+                            color: FlutterFlowTheme.of(context).iconColor)),
                     Padding(
-                      padding:
-                      const EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           0.0, 10.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment:
-                        MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Edit Plot Details',
-                            style:
-                            FlutterFlowTheme
-                                .of(context)
-                                .title3,
+                            style: FlutterFlowTheme.of(context).title3,
                           ),
                         ],
                       ),
-                    )],
+                    )
+                  ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).alternate,
@@ -109,10 +99,9 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-
                         Padding(
-                          padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 5.0, 0.0, 0.0),
                           child: Form(
                             autovalidateMode: AutovalidateMode.disabled,
                             child: Column(
@@ -127,35 +116,39 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: pdc.location.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Plot Location',
-                                              labelStyle: FlutterFlowTheme.of(context)
-                                                  .bodyText1,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                               hintText: 'Enter Plot Location',
-                                              hintStyle: FlutterFlowTheme.of(context)
-                                                  .subtitle2,
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -163,25 +156,28 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme.of(context).bodyText1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             maxLines: null,
                                           ),
                                         ),
@@ -189,7 +185,6 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     ],
                                   ),
                                 ),
-
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       10.0, 10.0, 10.0, 0.0),
@@ -199,35 +194,39 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: pdc.tahsil.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: ' Tahsil',
-                                              labelStyle: FlutterFlowTheme.of(context)
-                                                  .bodyText1,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                               hintText: 'Enter Tahsil',
-                                              hintStyle: FlutterFlowTheme.of(context)
-                                                  .subtitle2,
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -235,25 +234,28 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme.of(context).bodyText1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             maxLines: null,
                                             keyboardType: TextInputType.text,
                                           ),
@@ -266,48 +268,60 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                           decoration: InputDecoration(
                                             labelText: 'District',
                                             labelStyle:
-                                            FlutterFlowTheme.of(context).bodyText1,
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1,
                                             hintText: 'Enter District',
                                             hintStyle:
-                                            FlutterFlowTheme.of(context).subtitle2,
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2,
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: FlutterFlowTheme.of(context)
-                                                    .borderColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .borderColor,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: FlutterFlowTheme.of(context)
-                                                    .borderColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .borderColor,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            focusedErrorBorder: OutlineInputBorder(
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
-                                            FlutterFlowTheme.of(context).alternate,
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 0.0, 0.0, 0.0),
+                                                const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                    20.0, 0.0, 0.0, 0.0),
                                           ),
-                                          style: FlutterFlowTheme.of(context).bodyText1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
                                           maxLines: null,
                                           keyboardType: TextInputType.text,
                                         ),
@@ -324,35 +338,39 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: pdc.plotNumber.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: ' Plot No',
-                                              labelStyle: FlutterFlowTheme.of(context)
-                                                  .bodyText1,
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                               hintText: 'Enter Plot No',
-                                              hintStyle: FlutterFlowTheme.of(context)
-                                                  .subtitle2,
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -360,25 +378,28 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme.of(context).bodyText1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             maxLines: null,
                                           ),
                                         ),
@@ -390,48 +411,60 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                           decoration: InputDecoration(
                                             labelText: 'Plot Size',
                                             labelStyle:
-                                            FlutterFlowTheme.of(context).bodyText1,
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1,
                                             hintText: 'Enter Plot Size',
                                             hintStyle:
-                                            FlutterFlowTheme.of(context).subtitle2,
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2,
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: FlutterFlowTheme.of(context)
-                                                    .borderColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .borderColor,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
-                                                color: FlutterFlowTheme.of(context)
-                                                    .borderColor,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .borderColor,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
-                                            focusedErrorBorder: OutlineInputBorder(
+                                            focusedErrorBorder:
+                                                OutlineInputBorder(
                                               borderSide: const BorderSide(
                                                 color: Color(0x00000000),
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                             filled: true,
                                             fillColor:
-                                            FlutterFlowTheme.of(context).alternate,
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                             contentPadding:
-                                            const EdgeInsetsDirectional.fromSTEB(
-                                                20.0, 0.0, 0.0, 0.0),
+                                                const EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                    20.0, 0.0, 0.0, 0.0),
                                           ),
-                                          style: FlutterFlowTheme.of(context).bodyText1,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1,
                                           maxLines: null,
                                         ),
                                       ),
@@ -446,7 +479,8 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     children: [
                                       Text(
                                         'Plot Facing',
-                                        style: FlutterFlowTheme.of(context).bodyText1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
                                       ),
                                     ],
                                   ),
@@ -461,24 +495,25 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                       Expanded(
                                         child: FlutterFlowChoiceChips(
                                           initialized: true,
-                                          initiallySelected:pdc.plotFacingList ,
+                                          initiallySelected: pdc.plotFacingList,
                                           options: const [
                                             ChipData('North', Icons.north),
                                             ChipData('South', Icons.south),
                                             ChipData('East', Icons.east),
                                             ChipData('West', Icons.west)
                                           ],
-                                          onChanged: (val){
-                                            switch(val!.first.toString())
-                                            {
+                                          onChanged: (val) {
+                                            switch (val!.first.toString()) {
                                               case "North":
                                                 {
-                                                  pdc.plotFacing.value = "North";
+                                                  pdc.plotFacing.value =
+                                                      "North";
                                                   break;
                                                 }
                                               case "South":
                                                 {
-                                                  pdc.plotFacing.value = "South";
+                                                  pdc.plotFacing.value =
+                                                      "South";
                                                   break;
                                                 }
                                               case "East":
@@ -491,34 +526,38 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                                   pdc.plotFacing.value = "West";
                                                   break;
                                                 }
-
                                             }
                                           },
                                           selectedChipStyle: ChipStyle(
                                             backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .borderColor,
-                                            textStyle: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
+                                                FlutterFlowTheme.of(context)
+                                                    .borderColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                    ),
                                             iconColor: Colors.white,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
                                           unselectedChipStyle: ChipStyle(
                                             backgroundColor: Colors.white,
-                                            textStyle: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme.of(context)
-                                                  .secondaryText,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                    ),
                                             iconColor:
-                                            FlutterFlowTheme.of(context).iconColor,
+                                                FlutterFlowTheme.of(context)
+                                                    .iconColor,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
@@ -538,7 +577,8 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     children: [
                                       Text(
                                         'Number of Roads',
-                                        style: FlutterFlowTheme.of(context).bodyText1,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
                                       ),
                                     ],
                                   ),
@@ -560,8 +600,7 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                             ChipData('Three', Icons.circle)
                                           ],
                                           onChanged: (val) {
-                                            switch(val!.first.toString())
-                                            {
+                                            switch (val!.first.toString()) {
                                               case "One":
                                                 {
                                                   pdc.roads.value = "1";
@@ -581,29 +620,34 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                           },
                                           selectedChipStyle: ChipStyle(
                                             backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .borderColor,
-                                            textStyle: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: Colors.white,
-                                            ),
+                                                FlutterFlowTheme.of(context)
+                                                    .borderColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color: Colors.white,
+                                                    ),
                                             iconColor: Colors.white,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
                                           unselectedChipStyle: ChipStyle(
                                             backgroundColor: Colors.white,
-                                            textStyle: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme.of(context)
-                                                  .secondaryText,
-                                            ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Poppins',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                    ),
                                             iconColor:
-                                            FlutterFlowTheme.of(context).iconColor,
+                                                FlutterFlowTheme.of(context)
+                                                    .iconColor,
                                             iconSize: 18.0,
                                             elevation: 1.0,
                                           ),
@@ -624,36 +668,40 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                     children: [
                                       Expanded(
                                         child: Padding(
-                                          padding: const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 5.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                           child: TextFormField(
                                             controller: pdc.depth.value,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText:
-                                              'Depth of the plot from road level',
-                                              labelStyle: FlutterFlowTheme.of(context)
-                                                  .bodyText1,
+                                                  'Depth of the plot from road level',
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1,
                                               hintText: 'Enter Depth',
-                                              hintStyle: FlutterFlowTheme.of(context)
-                                                  .subtitle2,
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2,
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
-                                                  color: FlutterFlowTheme.of(context)
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .borderColor,
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               errorBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
@@ -661,25 +709,28 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
-                                              focusedErrorBorder: OutlineInputBorder(
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1.0,
                                                 ),
                                                 borderRadius:
-                                                BorderRadius.circular(8.0),
+                                                    BorderRadius.circular(8.0),
                                               ),
                                               filled: true,
-                                              fillColor: FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
                                               contentPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  20.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      20.0, 0.0, 0.0, 0.0),
                                             ),
-                                            style:
-                                            FlutterFlowTheme.of(context).bodyText1,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             maxLines: null,
                                           ),
                                         ),
@@ -692,7 +743,8 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -706,25 +758,32 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                               width: 100.0,
                                               height: 30.0,
                                               padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
                                               iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                              color: FlutterFlowTheme.of(context)
-                                                  .primaryColor,
-                                              textStyle: FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                fontFamily: 'Poppins',
-                                                color: FlutterFlowTheme.of(context)
-                                                    .primaryText,
-                                              ),
+                                                  const EdgeInsetsDirectional
+                                                          .fromSTEB(
+                                                      0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryColor,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle2
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                      ),
                                               borderSide: const BorderSide(
                                                 color: Colors.transparent,
                                                 width: 1.0,
                                               ),
-                                              borderRadius: BorderRadius.circular(8.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ],
@@ -735,24 +794,30 @@ class _PlotDetailsEditState extends State<PlotDetailsEdit> {
                                         },
                                         child: Container(
                                           alignment: Alignment.center,
-                                          width: MediaQuery.of(context).size.width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.35,
-                                          height: MediaQuery.of(context).size.height *
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
                                               0.04,
                                           decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context).buttonColor,
-                                            borderRadius: BorderRadius.circular(10.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .buttonColor,
+                                            borderRadius:
+                                                BorderRadius.circular(10.0),
                                           ),
                                           child: Text(
                                             'Update',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                              fontFamily: 'Poppins',
-                                              color: FlutterFlowTheme.of(
-                                                  context)
-                                                  .btnText,
-                                            ),
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .btnText,
+                                                ),
                                           ),
                                         ),
                                       ),
